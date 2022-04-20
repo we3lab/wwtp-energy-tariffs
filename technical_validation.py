@@ -27,39 +27,37 @@ def check_continuity(df, charge_type):
 
     return True
 
-chp_info = pd.read_csv("CHP_Info.csv")
+metadata = pd.read_csv("Metadata.csv")
 old_mgd = 50
 max_mgd = 812
 max_charges = {"electric_demand": 35, "electric_energy": 2, "gas_energy": 3,
                "gas_demand": 1.5, "gas_customer": 5000, "electric_customer": 5000}
 
-for cwns_no in chp_info["CWNS_No"]:
-    # 1) Check CWNS number is valid and CHP info is correct
-    info_df = pd.read_excel("WWTP_Billing.xls", sheet_name=str(cwns_no), nrows=7, header=None)
-    rate_df = pd.read_excel("WWTP_Billing.xls", sheet_name=str(cwns_no), header=8)
+for cwns_no in metadata["CWNS_No"]:
+    row = metadata.loc[metadata["CWNS_No"] == cwns_no]
+    rate_df = pd.read_excel("WWTP_Billing.xls", sheet_name=str(cwns_no))
 
-    assert info_df.iloc[0, 1] == cwns_no
-    assert (info_df.iloc[4, 1] == chp_info[chp_info["CWNS_No"] == cwns_no]["Has CHP"]).all()
-
-    # 2) Check that MGD is increasing with each sheet, within bounds of smallest/largest
-    current_mgd = info_df.iloc[3, 1]
+    # Check that MGD is increasing with each sheet, within bounds of smallest/largest
+    current_mgd = row["Total Flow (MGD)"].iloc[0]
     assert old_mgd <= current_mgd
     assert current_mgd <= max_mgd
     old_mgd = current_mgd
 
+    # If facility has_cogen, need gas (otherwise just electric)
     utilities = rate_df["utility"].unique()
-    # 3) If has_chp, need gas (otherwise just electric)
-    if info_df.iloc[4, 1] == "Yes":
+    if row["Has Cogen"].iloc[0] == "Yes":
         assert "gas" in utilities
+    else:
+        assert "gas" not in utilities
 
     for utility in utilities:
         for charge_type in rate_df.loc[rate_df["utility"] == utility]["type"].unique():
-            # 4) Check that all days of a year are included
+            # Check that all days of a year are included
             slice = rate_df.loc[(rate_df["utility"] == utility) & (rate_df["type"] == charge_type)]
             assert check_continuity(slice, charge_type)
 
-            # 5) prices are positive and below a threshold
-            # Many checked the outliers in the if statement are correct
+            # Check prices are positive and below a threshold
+            # Manually checked the outliers in the if statement are correct
             if not ((cwns_no == 42005016001 and charge_type == "customer")
                 or ((cwns_no == 36002001007 or cwns_no == 36002001010 or cwns_no == 36002001004
                      or cwns_no == 36002001009 or cwns_no == 36002001006 or cwns_no == 36003169012
@@ -69,10 +67,9 @@ for cwns_no in chp_info["CWNS_No"]:
                 assert slice["charge"].min() >= 0
                 assert slice["charge"].max() <= max_charges[utility + "_" + charge_type]
 
-    # 6) units (i.e. demand is in kW and energy in kWh)
+    # Check units (i.e. demand is in kW and energy in kWh)
     assert (rate_df.loc[rate_df["type"] == "customer"]["units"] == "$/month").all()
     assert (rate_df.loc[(rate_df["type"] == "demand") & (rate_df["utility"] == "electric")]["units"] == "$/kW").all()
     assert (rate_df.loc[(rate_df["type"] == "energy") & (rate_df["utility"] == "electric")]["units"] == "$/kWh").all()
-    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] != "customer")]["units"] == "$/therm").all()
-
-    # 7) estimate costs and compare to known values (use SVCW energy demand)
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "energy")]["units"] == "$/therm").all()
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "demand")]["units"] == "$/therm/hr").all()
