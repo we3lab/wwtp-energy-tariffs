@@ -35,7 +35,7 @@ max_charges = {"electric_demand": 35, "electric_energy": 2, "gas_energy": 3,
 
 for cwns_no in metadata["CWNS_No"]:
     row = metadata.loc[metadata["CWNS_No"] == cwns_no]
-    rate_df = pd.read_excel("WWTP_Billing.xls", sheet_name=str(cwns_no))
+    rate_df = pd.read_excel("WRRF_Billing.xls", sheet_name=str(cwns_no))
 
     # Check that MGD is increasing with each sheet, within bounds of smallest/largest
     current_mgd = row["Total Flow (MGD)"].iloc[0]
