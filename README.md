@@ -1,8 +1,9 @@
 # Data Records
-Data in this repository consists of two Excel spreadsheets and a CSV file are included:
+Data in this repository consists of two Excel spreadsheets and two CSV files:
 - Metadata.csv
 -	WRRF_Billing.xls
 -	WRRF_Billling_Assumptions.xlsx
+- dummy_energy_data.csv
 
 ## Metadata
 Metadata is stored in a single CSV files with each facility taking up one row and the following columns named in the header:
@@ -13,12 +14,12 @@ Metadata is stored in a single CSV files with each facility taking up one row an
 -	County: county where the facility is located, e.g. “Onondaga”
 -	State: two-letter code for the state where the facility is located, e.g. “NY”
 -	Has Cogen: whether the facility has co-generation capabilities (regardless of whether or not they are operating). Either “Yes” or “No”
--	Est. Electricity Demand (MW): estimated maximum electricity demand in MW. Calculated by multiplying the flow rate from the CWNS dataset by a typical energy intensity of wastewater treatment
--	Est. Gas Demand (therms/hr): estimated maximum natural gas demand in therms/hr. If a facility had co-generation, it was estimated that 50% of its electricity is produced by co-generation using a standard biogas mixture. If a facility did not have co-generation, gas demand was assumed to be zero.
+-	Est. Energy Demand (MW): estimated maximum electricity demand in MW. Calculated by multiplying the flow rate from the CWNS dataset by a typical energy intensity of wastewater treatment
+-	Est. Electric Grid Demand (MW): estimated maximum natural gas demand in MW. Either equal to or half of Est. Energy Demand depending on whether or not a facility has co-generation.
+-	Est. Natural Gas Demand (therms/hr): estimated maximum natural gas demand in therms/hr. If a facility had co-generation, it was estimated that 50% of its electricity is produced by co-generation using a standard biogas mixture. If a facility did not have co-generation, gas demand was assumed to be zero.
 -	Electric Utility: electric utility, e.g. “National Grid”
 -	Gas Utility: natural gas utility, e.g. “National Grid”
--	Electric URL: URL where the authors obtained electricity rate tariffs
--	Gas URL: URL where the authors obtained natural gas rate tariffs
+
 The data on flow rate, city, state, and county was obtained by merging the CWNS [Data Citation 1] with previously described procedure for determining if a facility has CHP. Description of utility service areas were used to determine the correct utility for each municipality Whenever possible static URLs were used, but that was not always feasible. In those cases, the tariffs may have been updated since 2021 and the online information may no longer match the dataset.
 
 ## Billing Data
@@ -41,3 +42,10 @@ Each worksheet of WRRF_Billing.xls is given the name of the CWNS number correspo
 Besides the assumptions made for every facility laid out in the Methods section, many utilities had nuanced rates which required further simplifying assumptions. These assumptions are cataloged in WRRF_Billing_Assumptions.xlsx, which has two worksheets: ‘Electric’ and ‘Gas’. Both have a new assumption on each row and identical columns:
 -	Assumptions: explanation of the assumption the authors made in determining the correct rate structure for these facilities
 -	CWNS_No_1, CWNS_No_2, …, CWNS_No_14: list of facilities for which this assumption applies. “ALL” indicates the assumption was applied to all facilities.
+
+## Dummy Energy Data
+One week of sample energy data at 15-minute timescales is copied for a year to be used by `sample_usage.py`.
+`sample_usage.py` demonstrates some simple analysis that can be conducted using this dataset.
+-	DateTime: Datetime of dummy energy data sample
+- grid_to_plant_kW: electricity consumed from the grid in kW
+- natural_gas_therm_per_hr: natural gas consumed by co-generation in therms/hr

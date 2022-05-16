@@ -1,4 +1,7 @@
+import os
 import pandas as pd
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def check_continuity(df, charge_type):
     if charge_type == "customer" or "demand":
@@ -26,6 +29,7 @@ def check_continuity(df, charge_type):
             month_start += 1
 
     return True
+
 
 metadata = pd.read_csv("Metadata.csv")
 old_mgd = 50
