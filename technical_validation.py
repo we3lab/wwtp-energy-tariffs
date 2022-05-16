@@ -1,4 +1,5 @@
 import os
+import pytest
 import pandas as pd
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -77,3 +78,10 @@ for cwns_no in metadata["CWNS_No"]:
     assert (rate_df.loc[(rate_df["type"] == "energy") & (rate_df["utility"] == "electric")]["units"] == "$/kWh").all()
     assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "energy")]["units"] == "$/therm").all()
     assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "demand")]["units"] == "$/therm/hr").all()
+
+    # Check that energy demand is either equal to or twice that of electricity demand
+    # and that natural gas demand is either 0 or electricity * conversion_factor
+    conversion_factor = 3600 / (105.5 * 10) # see paper for details
+    assert (row["Est. Energy Demand (MW)"].iloc[0] == pytest.approx(row["Est. Electric Grid Demand (MW)"].iloc[0])
+        or (row["Est. Energy Demand (MW)"].iloc[0]  / 2 == pytest.approx(row["Est. Electric Grid Demand (MW)"].iloc[0])
+            and row["Est. Electric Grid Demand (MW)"].iloc[0] == pytest.approx(row["Est. Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)))
