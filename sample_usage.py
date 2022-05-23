@@ -266,103 +266,132 @@ def last_day_of_month(any_day):
     return next_month - dt.timedelta(days=next_month.day)
 
 
-# Using a rate structure from Miami which has all 5 types of charges
-# (customer, electric_demand, electric_energy, natural_gas_demand, natural_gas_energy)
-cwns_no = "12000017027"
-
 elec_col = "grid_to_plant_kW"
 ng_col = "natural_gas_therm_per_hr"
 
 # Load energy consumption and rates
 energy_df = pd.read_csv("dummy_energy_data.csv")
-rate_df = pd.read_excel("WRRF_Billing.xls", sheet_name=cwns_no)
+metadata = pd.read_csv("Metadata.csv")
+results = None
 
 # Use the helper functions above to simulate year of energy cost calculations
-month = 1
-costs = []
-while month < 13:
-    # Find start and end index of this month
-    energy_df["DateTime"] = pd.to_datetime(energy_df["DateTime"])
-    month_start = dt.datetime(2019, month, 1, 0, 0, 0)
-    start_idx = (energy_df["DateTime"] == month_start).idxmax()
-    month_end = last_day_of_month(dt.datetime(2019, month, 1, 0, 0, 0)) + dt.timedelta(hours=23, minutes=45)
-    end_idx = (energy_df["DateTime"] == month_end).idxmax()
+for cwns_no in metadata["CWNS_No"]:
+    rate_df = pd.read_excel("WRRF_Billing.xls", sheet_name=str(cwns_no))
+    month = 1
+    costs = []
+    while month < 13:
+        # Find start and end index of this month
+        energy_df["DateTime"] = pd.to_datetime(energy_df["DateTime"])
+        month_start = dt.datetime(2019, month, 1, 0, 0, 0)
+        start_idx = (energy_df["DateTime"] == month_start).idxmax()
+        month_end = last_day_of_month(dt.datetime(2019, month, 1, 0, 0, 0)) + dt.timedelta(hours=23, minutes=45)
+        end_idx = (energy_df["DateTime"] == month_end).idxmax()
 
-    customer_charges = get_charge_array(
-        energy_df.loc[start_idx:end_idx],
-        rate_df,
-        "customer"
-    )
-    electric_demand_charges = get_charge_array(
-        energy_df.loc[start_idx:end_idx],
-        rate_df,
-        "demand",
-        utility="electric"
-    )
-    electric_energy_charges = get_charge_array(
-        energy_df.loc[start_idx:end_idx],
-        rate_df,
-        "energy",
-        utility="electric"
-    )
-    gas_energy_charges = get_charge_array(
-        energy_df.loc[start_idx:end_idx],
-        rate_df,
-        "energy",
-        utility="gas"
-    )
-    gas_demand_charges = get_charge_array(
-        energy_df.loc[start_idx:end_idx],
-        rate_df,
-        "demand",
-        utility="gas"
-    )
-    customer_cost = np.sum(customer_charges)
-    electric_demand_cost = calculate_cost(
-        electric_demand_charges,
-        energy_df.loc[start_idx:end_idx, elec_col],
-        charge_type="demand",
-        utility="electric",
-    )
-    electric_energy_cost = calculate_cost(
-        electric_energy_charges,
-        energy_df.loc[start_idx:end_idx, elec_col],
-        charge_type="energy",
-        utility="electric",
-    )
-    gas_demand_cost = calculate_cost(
-        gas_demand_charges,
-        energy_df.loc[start_idx:end_idx, ng_col],
-        charge_type="demand",
-        utility="gas",
-    )
-    gas_energy_cost = calculate_cost(
-        gas_energy_charges,
-        energy_df.loc[start_idx:end_idx, ng_col],
-        charge_type="energy",
-        utility="gas",
-    )
-    cost = {
-        "customer": customer_cost,
-        "electric_demand": electric_demand_cost,
-        "electric_energy": electric_energy_cost,
-        "gas_demand": gas_demand_cost,
-        "gas_energy": gas_energy_cost,
-    }
+        customer_charges = get_charge_array(
+            energy_df.loc[start_idx:end_idx],
+            rate_df,
+            "customer"
+        )
+        electric_demand_charges = get_charge_array(
+            energy_df.loc[start_idx:end_idx],
+            rate_df,
+            "demand",
+            utility="electric"
+        )
+        electric_energy_charges = get_charge_array(
+            energy_df.loc[start_idx:end_idx],
+            rate_df,
+            "energy",
+            utility="electric"
+        )
+        gas_energy_charges = get_charge_array(
+            energy_df.loc[start_idx:end_idx],
+            rate_df,
+            "energy",
+            utility="gas"
+        )
+        gas_demand_charges = get_charge_array(
+            energy_df.loc[start_idx:end_idx],
+            rate_df,
+            "demand",
+            utility="gas"
+        )
+        customer_cost = np.sum(customer_charges)
+        electric_demand_cost = calculate_cost(
+            electric_demand_charges,
+            energy_df.loc[start_idx:end_idx, elec_col],
+            charge_type="demand",
+            utility="electric",
+        )
+        electric_energy_cost = calculate_cost(
+            electric_energy_charges,
+            energy_df.loc[start_idx:end_idx, elec_col],
+            charge_type="energy",
+            utility="electric",
+        )
+        gas_demand_cost = calculate_cost(
+            gas_demand_charges,
+            energy_df.loc[start_idx:end_idx, ng_col],
+            charge_type="demand",
+            utility="gas",
+        )
+        gas_energy_cost = calculate_cost(
+            gas_energy_charges,
+            energy_df.loc[start_idx:end_idx, ng_col],
+            charge_type="energy",
+            utility="gas",
+        )
+        cost = {
+            "customer": customer_cost,
+            "electric_demand": electric_demand_cost,
+            "electric_energy": electric_energy_cost,
+            "gas_demand": gas_demand_cost,
+            "gas_energy": gas_energy_cost,
+        }
 
-    costs.append(cost)
-    month +=1
+        costs.append(cost.values())
+        month +=1
 
-# Create DataFrame of monthly costs and plot it
-ax0 = pd.DataFrame(costs).drop(["customer", "gas_demand", "gas_energy"], axis=1).plot.bar()
-ax0.set_title("Simulated Electricity Costs")
-ax0.set_xlabel("Month")
-ax0.set_ylabel("Electricity Cost ($)")
-ax0.legend(["Demand", "Energy"], loc="center right")
-ax0.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"])
-ax1 = pd.DataFrame(costs).drop(["customer", "electric_demand", "electric_energy"],axis=1).plot.bar()
-ax1.set_title("Simulated Natural Gas Costs")
-ax1.set_xlabel("Month")
-ax1.set_ylabel("Natural Gas Cost ($)")
-ax1.legend(["Demand", "Energy"], loc="center right")
-ax1.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"])
+    if results is not None:
+        costs = [cost for charge in costs for cost in charge]
+        results = pd.concat([results, pd.Series(costs, index=index)], axis=1)
+    else:
+        charge_type = [
+            "customer", "customer", "customer", "customer", "customer", "customer",
+            "customer", "customer", "customer", "customer", "customer", "customer",
+            "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand",
+            "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand",
+            "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy",
+            "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy",
+            "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand",
+            "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand",
+            "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy",
+            "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy"
+        ]
+        month = [
+            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
+            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
+            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
+            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
+            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
+        ]
+        tuples = list(zip(*[charge_type, month]))
+        index = pd.MultiIndex.from_tuples(tuples, names=["charge_type", "month"])
+
+        # flatten lists of costs
+        costs = [cost for charge in costs for cost in charge]
+        results = pd.Series(costs, index=index)
+
+# boxplot of monthly averages for all rate types and facilities
+customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'customer')].mean(axis=0)
+gas_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_energy')].mean(axis=0)
+gas_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_demand')].mean(axis=0)
+elec_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_energy')].mean(axis=0)
+elec_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_demand')].mean(axis=0)
+avg_results = pd.concat([customer_avg, gas_energy_avg, gas_demand_avg, elec_energy_avg, elec_demand_avg], axis=1)
+
+ax0 = avg_results.boxplot()
+ax0.set_title("Boxplot of Energy Costs")
+ax0.set_xlabel("Charge Type")
+ax0.set_ylabel("Cost ($/month)")
+ax0.set_xticklabels(["Customer", "Gas Energy", "Gas Demand", "Electric Energy", "Electric Demand"])
