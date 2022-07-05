@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as font_manager
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -357,23 +358,32 @@ for cwns_no in metadata["CWNS_No"]:
         results = pd.concat([results, pd.Series(costs, index=index)], axis=1)
     else:
         charge_type = [
-            "customer", "customer", "customer", "customer", "customer", "customer",
-            "customer", "customer", "customer", "customer", "customer", "customer",
-            "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand",
-            "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand", "electric_demand",
-            "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy",
-            "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy", "electric_energy",
-            "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand",
-            "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand", "gas_demand",
-            "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy",
-            "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy", "gas_energy"
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
         ]
         month = [
-            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
-            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
-            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
-            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
-            "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec",
+            "Jan", "Jan", "Jan", "Jan", "Jan",
+            "Feb", "Feb", "Feb", "Feb", "Feb",
+            "Mar", "Mar", "Mar", "Mar", "Mar",
+            "Apr", "Apr", "Apr", "Apr", "Apr",
+            "May", "May", "May", "May", "May",
+            "June", "June", "June", "June", "June",
+            "July", "July", "July", "July", "July",
+            "Aug", "Aug", "Aug", "Aug", "Aug",
+            "Sept", "Sept", "Sept", "Sept", "Sept",
+            "Oct", "Oct", "Oct", "Oct", "Oct",
+            "Nov", "Nov", "Nov", "Nov", "Nov",
+            "Dec", "Dec", "Dec", "Dec", "Dec",
         ]
         tuples = list(zip(*[charge_type, month]))
         index = pd.MultiIndex.from_tuples(tuples, names=["charge_type", "month"])
@@ -381,6 +391,36 @@ for cwns_no in metadata["CWNS_No"]:
         # flatten lists of costs
         costs = [cost for charge in costs for cost in charge]
         results = pd.Series(costs, index=index)
+
+    # plot all months of sample Facility No. 12000017028
+    if cwns_no == 12000017027:
+        costs = pd.Series(costs, index=index)
+        ind = np.arange(12)  # the x locations for the groups
+        width = 0.4          # the width of the bars
+
+        plt.figure(figsize=(4, 4))
+        ax0 = plt.gca()
+        ax0.bar(ind, costs["electric_demand"], width)
+        ax0.bar(ind + width, costs["electric_energy"], width)
+        ax0.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"])
+        ax0.set_xlabel("Month", fontname="Arial", fontsize=12)
+        ax0.set_ylabel("Electricity Cost ($)", fontname="Arial", fontsize=12)
+        arial_font = font_manager.FontProperties(family='Arial', style='normal', size=8.75)
+        ax0.legend(["Demand", "Energy"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
+        plt.yticks(range(0, 11000, 1000))
+        plt.savefig("ElectricityCosts.png")
+
+        plt.figure(figsize=(4, 4))
+        ax1 = plt.gca()
+        ax1.bar(ind, costs["gas_demand"], width)
+        ax1.bar(ind + width, costs["gas_energy"], width)
+        ax1.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"])
+        ax1.set_xlabel("Month", fontname="Arial", fontsize=12)
+        ax1.set_ylabel("Natural Gas Cost ($)", fontname="Arial", fontsize=12)
+        arial_font = font_manager.FontProperties(family='Arial', style='normal', size=8.75)
+        ax1.legend(["Demand", "Energy"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
+        plt.yticks(range(0, 80, 10))
+        plt.savefig("NaturalGasCosts.png")
 
 # violin plot of monthly averages for all rate types and facilities
 customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'customer')].mean(axis=0)
@@ -393,9 +433,13 @@ avg_results = pd.concat([customer_avg, gas_energy_avg, gas_demand_avg, elec_ener
 plt.figure(num=0, figsize=(8, 4))
 plt.violinplot(avg_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
-ax0.set_title("Energy Cost Simulation for 100 Largest WWTPs in USA")
-ax0.set_xlabel("Charge Type")
-ax0.set_ylabel("Cost ($/month)")
+# ax0.set_title("Energy Cost Simulation for 100 Largest WWTPs in USA")
+ax0.set_xlabel("Charge Type", fontname="Arial", fontsize=12)
+ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
 ax0.set_xticks([1, 2, 3, 4, 5])
-ax0.set_xticklabels(["Customer", "Gas Energy", "Gas Demand", "Electric Energy", "Electric Demand"])
+ax0.set_xticklabels(
+    ["Customer", "Gas Energy", "Gas Demand", "Electric Energy", "Electric Demand"],
+    fontname="Arial",
+    fontsize=12
+)
 plt.savefig("CostsViolionPlot.png")
