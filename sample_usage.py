@@ -276,7 +276,7 @@ results = None
 
 # Use the helper functions above to simulate year of energy cost calculations
 for cwns_no in metadata["CWNS_No"]:
-    rate_df = pd.read_excel("WRRF_Billing.xls", sheet_name=str(cwns_no))
+    rate_df = pd.read_excel("WWTP_Billing.xls", sheet_name=str(cwns_no))
     month = 1
     costs = []
     while month < 13:
@@ -393,7 +393,7 @@ avg_results = pd.concat([customer_avg, gas_energy_avg, gas_demand_avg, elec_ener
 plt.figure(num=0, figsize=(8, 4))
 plt.violinplot(avg_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
-ax0.set_title("Energy Cost Simulation for 100 Largest WRRFs in USA")
+ax0.set_title("Energy Cost Simulation for 100 Largest WWTPs in USA")
 ax0.set_xlabel("Charge Type")
 ax0.set_ylabel("Cost ($/month)")
 ax0.set_xticks([1, 2, 3, 4, 5])
