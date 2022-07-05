@@ -382,7 +382,7 @@ for cwns_no in metadata["CWNS_No"]:
         costs = [cost for charge in costs for cost in charge]
         results = pd.Series(costs, index=index)
 
-# boxplot of monthly averages for all rate types and facilities
+# violin plot of monthly averages for all rate types and facilities
 customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'customer')].mean(axis=0)
 gas_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_energy')].mean(axis=0)
 gas_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_demand')].mean(axis=0)
@@ -390,8 +390,12 @@ elec_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 
 elec_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_demand')].mean(axis=0)
 avg_results = pd.concat([customer_avg, gas_energy_avg, gas_demand_avg, elec_energy_avg, elec_demand_avg], axis=1)
 
-ax0 = avg_results.boxplot()
-ax0.set_title("Boxplot of Energy Costs")
+plt.figure(num=0, figsize=(8, 4))
+plt.violinplot(avg_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
+ax0 = plt.gca()
+ax0.set_title("Energy Cost Simulation for 100 Largest WRRFs in USA")
 ax0.set_xlabel("Charge Type")
 ax0.set_ylabel("Cost ($/month)")
+ax0.set_xticks([1, 2, 3, 4, 5])
 ax0.set_xticklabels(["Customer", "Gas Energy", "Gas Demand", "Electric Energy", "Electric Demand"])
+plt.savefig("CostsViolionPlot.png")
