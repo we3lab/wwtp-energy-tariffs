@@ -271,13 +271,13 @@ elec_col = "grid_to_plant_kW"
 ng_col = "natural_gas_therm_per_hr"
 
 # Load energy consumption and rates
-energy_df = pd.read_csv("dummy_energy_data.csv")
-metadata = pd.read_csv("Metadata.csv")
+energy_df = pd.read_csv("data/dummy_energy_data.csv")
+metadata = pd.read_csv("data/Metadata.csv")
 results = None
 
 # Use the helper functions above to simulate year of energy cost calculations
 for cwns_no in metadata["CWNS_No"]:
-    rate_df = pd.read_excel("WWTP_Billing.xls", sheet_name=str(cwns_no))
+    rate_df = pd.read_excel("data/WWTP_Billing.xlsx", sheet_name=str(cwns_no))
     month = 1
     costs = []
     while month < 13:

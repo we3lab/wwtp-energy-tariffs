@@ -1,7 +1,7 @@
 # Data Records
 Data in this repository consists of two Excel spreadsheets and two CSV files:
 - Metadata.csv
--	WWTP_Billing.xls
+-	WWTP_Billing.xlsx
 -	WWTP_Billling_Assumptions.xlsx
 - dummy_energy_data.csv
 
