@@ -12,23 +12,23 @@ Index,CWNS_No,Total Flow (MGD),City,County,State,Has Cogen,Est. Energy Demand (M
 11,34006012001,58.8,Camden,Camden,NJ,Yes,6.125,3.0625,10.45023696,Public Service Electric And Gas,Public Service Electric And Gas
 12,6004010004,59,Van Nuys,Los Angeles,CA,No,6.145833334,6.145833334,0,Southern California Edison,
 13,36002001007,60,Brooklyn,Kings,NY,Yes,6.25,3.125,10.66350711,Con Edison,National Grid
-14,51000161001,60,Richmond,Richmond City,VA,No,6.25,6.25,0,Dominion energy,
-15,40000123012,60,Oklahoma City,Oklahoma,OK,No,6.25,6.25,0,OG&E,
-16,53001280001,60,Tacoma,Pierce,WA,Yes,6.25,3.125,10.66350711,Tacoma Public utilities,Puget Sound Energy
+14,51000161001,60,Richmond,Richmond City,VA,No,6.25,6.25,0,Dominion Energy,
+15,40000123012,60,Oklahoma City,Oklahoma,OK,No,6.25,6.25,0,Oklahoma Gas & Electric,
+16,53001280001,60,Tacoma,Pierce,WA,Yes,6.25,3.125,10.66350711,Tacoma Power,Puget Sound Energy
 17,36002001004,61.06,College Point,Queens,NY,Yes,6.360416667,3.180208334,10.85189574,Con Edison,National Grid
-18,32000011001,62,Las Vegas,Clark,NV,No,6.672916666,6.672916666,0,NV energy,
+18,32000011001,62,Las Vegas,Clark,NV,No,6.672916666,6.672916666,0,NV Energy,
 19,36002001006,64.06,Brooklyn,Kings,NY,Yes,6.672916667,3.336458334,11.38507109,Con Edison,National Grid
 20,41000017001,64.5,Portland,Multnomah,OR,Yes,6.71875,3.359375,11.46327014,Portland General Electric,NW Natural
-21,47000245002,65,Chattanooga,Hamilton,TN,No,6.770833334,6.770833334,0,EPB,Chattanooga gas
+21,47000245002,65,Chattanooga,Hamilton,TN,No,6.770833334,6.770833334,0,EPB of Chattanooga,
 22,24000001002,67,Baltimore,Baltimore City,MD,No,6.979166666,6.979166666,0,Baltimore Gas and Electric,Baltimore Gas and Electric
 23,42006056001,68.59,Erie City,Erie,PA,No,7.144791664,7.144791664,0,Penelec,
 24,53000776001,70,Renton,King,WA,Yes,7.291666667,3.645833334,12.44075829,Puget Sound Energy,Puget Sound Energy
-25,47000940001,70.5,Memphis,Shelby,TN,No,7.34375,7.34375,0,"Memphis Light, Gas, and Water (MLGW)",
+25,47000940001,70.5,Memphis,Shelby,TN,No,7.34375,7.34375,0,"Memphis Light, Gas, and Water",
 26,36007136001,71.153,Syracuse,Onondaga,NY,Yes,7.411770833,3.705885416,12.64567536,National Grid,National Grid
-27,39002093001,72,Dayton,Montgomery,OH,Yes,7.5,3.75,12.79620853,AES Ohio,Centerpoint
+27,39002093001,72,Dayton,Montgomery,OH,Yes,7.5,3.75,12.79620853,AES Ohio,Centerpoint Energy
 28,12000001001,72.5,Pompano Beach,Broward,FL,Yes,7.552083333,3.776041666,12.88507109,Florida Power and Light,Florida Public Utilities Company
 29,10000027001,75,Wilmington,New Castle,DE,Yes,7.8125,3.90625,13.32938389,Delmarva,Delmarva
-30,51000154002,75,Richmond,Henrico,VA,No,7.8125,7.8125,0,Dominion energy,
+30,51000154002,75,Richmond,Henrico,VA,No,7.8125,7.8125,0,Dominion Energy,
 31,6005053001,75,Fresno,Fresno,CA,Yes,7.8125,3.90625,13.32938389,Pacific Gas and Electric,Pacific Gas and Electric
 32,34001005001,75.19,Little Ferry,Bergen,NJ,Yes,7.832291667,3.916145834,13.36315166,Public Service Electric And Gas,Public Service Electric And Gas
 33,15000003001,77.6,Honolulu,Honolulu,HI,Yes,8.083333333,4.041666666,13.79146919,Hawaiian Electric,Hawaii Gas
@@ -47,14 +47,14 @@ Index,CWNS_No,Total Flow (MGD),City,County,State,Has Cogen,Est. Energy Demand (M
 46,36002001010,87.09,Brooklyn,Kings,NY,Yes,9.071875,4.5359375,15.47808057,Con Edison,National Grid
 47,13000012004,87.52,Atlanta,Fulton,GA,Yes,9.116666667,4.558333334,15.55450237,Georgia power,Georgia natural gas
 48,6008022001,88,Fountain Valley,Orange,CA,Yes,9.166666667,4.583333334,15.63981043,Southern California Edison,Socal Gas
-49,32000200820,89,Las Vegas,Clark,NV,No,9.270833336,9.270833336,0,NV energy,
+49,32000200820,89,Las Vegas,Clark,NV,No,9.270833336,9.270833336,0,NV Energy,
 50,47000940002,90,Memphis,Shelby,TN,No,9.375,9.375,0,"Memphis Light, Gas, and Water (MLGW)",
 51,47001016001,91.9,Nashville,Davidson,TN,Yes,9.572916667,4.786458334,16.33293839,Nashville Electric Service,Piedmont Natural Gas Company
-52,12000017028,92,Miami,Miami-Dade,FL,No,9.583333336,9.583333336,0,Florida power and light,
+52,12000017028,92,Miami,Miami-Dade,FL,No,9.583333336,9.583333336,0,Florida Power and Light,
 53,22009071001,92.1,New Orleans,Orleans,LA,No,9.59375,9.59375,0,Entergy New Orleans,
 54,36002001009,93.09,Brooklyn,Kings,NY,Yes,9.696875,4.8484375,16.54443128,Con Edison,National Grid
 55,42000094003,94.8,Philadelphia,Philadelphia,PA,No,9.875,9.875,0,PECO,
-56,12000017027,95,Miami,Miami-Dade,FL,Yes,9.895833333,4.947916666,16.88388626,Florida power and light,Florida City Gas
+56,12000017027,95,Miami,Miami-Dade,FL,Yes,9.895833333,4.947916666,16.88388626,Florida Power and Light,Florida City Gas
 57,39001792002,96,Lockbourne,Franklin,OH,No,10,10,0,AEP Ohio,Columbia Gas
 58,48007039001,96,Houston,Harris,TX,No,10,10,0,CenterPoint Energy,
 59,36002001005,96.09,Jamaica,Queens,NY,Yes,10.009375,5.0046875,17.07760664,Con Edison,National Grid
@@ -65,7 +65,7 @@ Index,CWNS_No,Total Flow (MGD),City,County,State,Has Cogen,Est. Energy Demand (M
 64,18000061001,120,Indianapolis,Marion,IN,No,12.5,12.5,0,AES Indiana,
 65,36002001002,122.12,Bronx,Bronx,NY,Yes,12.72083333,6.360416666,21.70379147,Con Edison,Con Edison
 66,48004026001,123.704,Dallas,Dallas,TX,No,12.88583334,12.88583334,0,Oncor,
-67,12000017004,127,Miami,Miami-Dade,FL,Yes,13.22916667,6.614583334,22.57109005,Florida power and light,Florida City Gas
+67,12000017004,127,Miami,Miami-Dade,FL,Yes,13.22916667,6.614583334,22.57109005,Florida Power and Light,Florida City Gas
 68,36002001003,129.11,Astoria,Queens,NY,Yes,13.44895833,6.724479166,22.94609005,Con Edison,National Grid
 69,39001666001,131.09,Cleveland,Cuyahoga,OH,No,13.65520834,13.65520834,0,Cleveland Public Power,
 70,48004122001,138.9,Fort Worth,Tarrant,TX,Yes,14.46875,7.234375,24.68601896,Oncor,Atmos Energy
@@ -75,7 +75,7 @@ Index,CWNS_No,Total Flow (MGD),City,County,State,Has Cogen,Est. Energy Demand (M
 74,39003369002,151,Cincinnati,Hamilton,OH,No,15.72916666,15.72916666,0,Duke Energy,
 75,6008022002,151,Fountain Valley,Orange,CA,Yes,15.72916667,7.864583336,26.83649289,Southern California Edison,Socal Gas
 76,48000004001,152,Dallas,Dallas,TX,No,15.83333334,15.83333334,0,Oncor,
-77,8000070001,152,Denver,Adams,CO,Yes,15.83333334,7.916666664,27.01421801,Xcel energy,Xcel energy
+77,8000070001,152,Denver,Adams,CO,Yes,15.83333334,7.916666664,27.01421801,Xcel Energy,Xcel Energy
 78,24000001001,155.483,Baltimore,Baltimore,MD,Yes,16.19614583,8.098072914,27.6332346,Baltimore Gas and Electric,Baltimore Gas and Electric
 79,42005016001,164,Pittsburgh,Allegheny,PA,No,17.08333334,17.08333334,0,Duquesne Light Company,
 80,6005009001,165,Sacramento,Sacramento,CA,Yes,17.1875,8.59375,29.32464455,SMUD,Pacific Gas and Electric
@@ -86,7 +86,7 @@ Index,CWNS_No,Total Flow (MGD),City,County,State,Has Cogen,Est. Energy Demand (M
 85,6009031001,184,San Diego,San Diego,CA,Yes,19.16666667,9.583333336,32.7014218,San Diego Gas and Electric,San Diego Gas and Electric
 86,42000094001,196.7,Philadelphia,Philadelphia,PA,No,20.48958334,20.48958334,0,PECO,
 87,42000094002,198.5,Philadelphia,Philadelphia,PA,Yes,20.67708333,10.33854166,35.27843602,PECO,Philadelphia Gas works
-88,27000001001,203.62,St Paul,Ramsey,MN,No,21.21041666,21.21041666,0,Xcel energy,
+88,27000001001,203.62,St Paul,Ramsey,MN,No,21.21041666,21.21041666,0,Xcel Energy,
 89,55003100001,212,Milwaukee,Milwaukee,WI,Yes,22.08333333,11.04166666,37.67772512,WE ENERGY,WE Energy
 90,17000721009,232.58,Chicago,Cook,IL,No,24.22708334,24.22708334,0,Comed,
 91,36002001001,250,New York,New York,NY,Yes,26.04166667,13.02083334,44.43127962,Con Edison,Con Edison
