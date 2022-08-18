@@ -1,8 +1,9 @@
 # Data Records
-Data in this repository consists of two Excel spreadsheets and two CSV files:
-- Metadata.csv
+Data in this repository consists of two Excel spreadsheets and three CSV files:
+- metadata.csv
 -	WWTP_Billing.xlsx
 -	WWTP_Billling_Assumptions.xlsx
+- reference_list.csv
 - dummy_energy_data.csv
 
 ## Metadata
@@ -42,6 +43,22 @@ Each worksheet of WWTP_Billing.xls is given the name of the CWNS number correspo
 Besides the assumptions made for every facility laid out in the Methods section, many utilities had nuanced rates which required further simplifying assumptions. These assumptions are cataloged in WWTP_Billing_Assumptions.xlsx, which has two worksheets: ‘Electric’ and ‘Gas’. Both have a new assumption on each row and identical columns:
 -	Assumptions: explanation of the assumption the authors made in determining the correct rate structure for these facilities
 -	CWNS_No_1, CWNS_No_2, …, CWNS_No_14: list of facilities for which this assumption applies. “ALL” indicates the assumption was applied to all facilities.
+
+## Reference List
+There is a list of all the original rate schedules and tariffs used to compile this dataset, which includes the following information:
+- Document Title: Name of the document being referenced
+- Utility: Utility which published this tariff
+- Day Filed: Day on which this tariff was filed (if known)
+- Month Filed: Month in which this tariff was filed (if known)
+- Year Filed: Year in which this tariff was filed (if known)
+- Day Effective: Day on which this tariff became effective (if known)
+- Month Effective: Month in which this tariff became effective (if known)
+- Year Effective: Year in which this tariff became effective (if known)
+- Day Accessed: Day on which this tariff was downloaded
+- Month Accessed: Month in which this tariff was downloaded
+- Year Accessed: Year in which this tariff was downloaded
+- Relevant CWNS Numbers: List of facilities to which this tariff applies
+- URL: Link to the original document in this repository in PDF, Excel, or Word format
 
 ## Dummy Energy Data
 One week of sample energy data at 15-minute timescales is copied for a year to be used by `sample_usage.py`.

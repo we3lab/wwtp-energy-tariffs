@@ -32,7 +32,7 @@ def check_continuity(df, charge_type):
     return True
 
 
-metadata = pd.read_csv("data/Metadata.csv")
+metadata = pd.read_csv("data/metadata.csv")
 old_mgd = 50
 max_mgd = 812
 max_charges = {"electric_demand": 35, "electric_energy": 2, "gas_energy": 3,
