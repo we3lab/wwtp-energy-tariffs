@@ -25,11 +25,11 @@ Commercial Electric Rates,NV Energy,,,,1,10,2021,,,,"32000011001, 32000200820",h
 Schedule 89: Large Nonresidential Standard Service,Portland General Electric,16,11,2020,1,1,2021,,,,41000017001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Sched_089.pdf
 Summary of Monthly Sales Service Billing Rates,NW Natural,,,,1,11,2021,,,,41000017001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/OR-Summary-Service_2021.pdff
 GSB Rate Schedule Summary,EPB of Chattanooga,,,,1,10,2018,,,,47000245002,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/GSB%20Summary%20Oct%202018.pdf
-Primary Voltage Service: Schedule P,Baltimore Gas and Electric,28,12,2020,1,1,2021,,,,24000001002,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/P3_SCH_P.pdf
-Current Market-Priced Service Rate Components,Baltimore Gas and Electric,27,1,2021,1,3,2021,,,,24000001002,https://github.com/we3lab/wwtp-energy-rates/main/tariffs/references/Rdr_1.pdf
+Primary Voltage Service: Schedule P,Baltimore Gas and Electric,28,12,2020,1,1,2021,,,,"24000001002, 24000001001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/P3_SCH_P.pdf
+Current Market-Priced Service Rate Components,Baltimore Gas and Electric,27,1,2021,1,3,2021,,,,"24000001002, 24000001001",https://github.com/we3lab/wwtp-energy-rates/main/tariffs/references/Rdr_1.pdf
 Electric Service Tariff,Penelec,,,,1,7,2021,,,,42006056001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Penelec-Tariff-81-Supp-117.pdf
 Summary of Total Current Prices - Electric,Puget Sound Energy,,,,1,10,2021,,,,53000776001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/summ_elec_prices_2021_10_01.pdf
-Electric Service: Schedule GSA (E-2),"Memphis Light, Gas, and Water",,,,4,1,2021,,,,47000940001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/GSA%20Jan21.pdf
+Electric Service: Schedule GSA (E-2),"Memphis Light, Gas, and Water",,,,4,1,2021,,,,"47000940001, 47000940002",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/GSA%20Jan21.pdf
 Service Rates,National Grid,,,,,,,24,6,2021,"36007136001, 36008024001, 36009071001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Service%20Rates_National%20Grid.pdf
 Electric Distribution Service: Primary,AES Ohio,25,5,2021,1,6,2021,,,,39002093001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/D20%20-%20Primary%206-1-21.pdf
 Tariff for Gas Service,CenterPoint Energy,,,,3,6,2021,,,,39002093001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/oh-gas-tariff.pdf
@@ -40,10 +40,48 @@ Delaware Gas Tariff,Delmarva,29,6,2021,1,7,2021,,,,10000027001,https://github.co
 Hawai‘i Electric Light Energy Cost Recovery Factor,Hawaiian Electric,27,1,2021,1,2,2021,,,,15000003001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/hawaii_ecrc_2021_02.pdf
 Schedule TOU-P,Hawaiian Electric,,,,1,1,2019,,,,15000003001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/heco_rates_tou_p.pdf
 Tariff Applicable to Utility Gas Service,Hawaii Gas,,,,1,2,2019,,,,15000003001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/hgas_tariff_oahu_rate_sch_eff_02-01-2019.pdf
-PSC No. 9: Gas,Con Edison,,,,1,1,2021,,,,"36003169012, 36002001002, 36002001001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/coned-gas-2021.pdf
 Tariff for Retail Delivery Service,Oncor,,,,8,10,2018,,,,"48004026002, 48004026001, 48004122001, 48000004001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Tariff%20for%20Retail%20Delivery%20Service.pdf
 Generic Transmission and Distribution Rates,Oncor,,,,1,3,2021,,,,"48004026002, 48004026001, 48004122001, 48000004001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/tdgenericratesummary.pdf
 Tariff for Gas Service,Atmos Energy,15,6,2021,1,7,2021,,,,"48004026002, 48004122001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/mtx_aec_tariff_cee_effective_7_01_2021.pdf
+Schedule of Rates for Electric Service,Ohio Edison,,,,1,12,2021,,,,39000084001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/OE-2021-Electric-Service.pdf
+Large Volume General Sales Service (LVGSS),Dominion Energy,5,1,2021,6,1,2021,,,,39000084001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/tariff-lvgss.pdf
+PSC No. 9: Gas,Con Edison,,,,1,1,2021,,,,"36003169012, 36002001002, 36002001001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/coned-gas-2021.pdf
+Schedule: Ohio Power Rate Zone,AEP Ohio,,,,1,8,2021,,,,"39001792001, 39001792002",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/2021-08-03_AEP_OAD_Tariff.pdf
+Rate Book for Electric Service,DTE Energy,11,2,2021,6,3,2021,,,,"26004005011, 26000596001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/dtee1cur_579203_7.pdf
+Large Power Service (LPS),Evergy,6,11,2018,6,12,2018,,,,29001011001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Large%20Power%20Service%20081419.pdf
+Schedule of Rates for Electric Service,Toledo Edison,,,,1,12,2021,,,,39008260001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/TE-2021-Electric-Service.pdf
+Rules and Regulations Governing the Distribution and Sale of Gas,Columbia Gas,,,,30,12,2021,,,,"39008260001, 39001792002",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/ohio-tariff.pdf
+"Power and Light Large Schedule: ""PLL-12""",Georgia Power,,,,1,1,2021,,,,13000012004,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/PLL-12.pdf
+Atlanta Gas Light Company Tariff,Atlanta Gas Light,,,,1,12,2021,,,,13000012004,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/agl-tariff_effective_12-1-21_clean.docx
+Cross-Over Rate for November 2021,Southern California Gas,5,11,2021,10,11,2021,,,,"6008022001, 6008022002, 6004010001, 6004009001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/CalPUC_5896.pdf
+Large General Power Rate Schedules,Nashville Electric Service,,,,1,11,2021,,,,47001016001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/LGS%20November%202021%20Retail%20Rate%20Schedules.pdf
+Index of Tariff & Service Regulations,Piedmont Natural Gas Company,,,,1,11,2021,,,,47001016001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/tn-tariffandserviceregulations.pdf
+Large Electric Service,Entergy New Orleans,1,3,2020,1,4,2020,,,,22009071001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/enol_elec_le.pdf
+Electric Service Tariff,PECO,14,9,2021,1,10,2021,,,,"42000094003, 42000094001, 42000094002",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/current%20elec%20tariff%20Oct%201%202021.pdf
+FPSC Natural Gas Tariff,Florida City Gas,,,,5,1,2021,,,,"12000017027, 12000017004",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/FCG-Tariff-1-1-21.pdf
+Tariff for Retail Delivery Service,CenterPoint Energy,,,,15,10,2021,,,,48007039001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/CNP-Retail-Del-Tariff-Book.pdf
+"Rates, Terms, and Conditions for Furnishing Electric Service",Louisville Gas and Electric,,,,24,9,2021,,,,21000025001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/LGE-Electric-Rates-10222021.pdf
 Business Rates,Seattle City Light,,,,,,,26,10,2021,53000776002,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Business%20Rates%20-%20City%20Light%20_%20seattle.gov.pdf
+Service Classification No. 11 (M): Large Primary Service Rate,Ameren,18,3,2021,1,4,2021,,,,"29001023001, 29001023002",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/UECSheet61Rate11MLPS.pdf
+Rate PL: Primary Service (Large),AES Indiana,,,,7,4,2021,,,,18000061001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Rate-PL-Primary-Service-Large-50409-Effective-04-07-21.pdf
+Rate Schedule,Cleveland Public Power,,,,,,,18,11,2021,39001666001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Rate%20Schedule%20_%20Cleveland%20Public%20Power.pdf
+E-63: Standard Price Plan for Primary Large General Service,Salt River Project,15,10,2021,1,11,2021,,,,4001318001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/E-63.pdf
+Tariff Schedules,Southwest Gas,23,11,2021,1,12,2021,,,,4001318001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/21%201201%20%20AZ%20Gas%20Tariff%20No%207%20Revision%20No%20375.pdf
+Rate DP: Service at Primary Distribution Voltage,Duke Energy,,,,2,1,2019,,,,39003369002,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/sheet-no-44-rate-dp-oh-e.pdf
+Colorado Commercial and Industrial Gas and Electric Rate Schedule Summaries,Xcel Energy,,,,1,1,2021,,,,8000070001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/COBusRates.pdf
+Natural Gas Rates Summary,Xcel Energy,,,,1,7,2021,,,,8000070001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Gas_Tariff_Summary_Sheet_07.01.2021.pdf
+General Service - Gas: Schedule C,Baltimore Gas and Electric,1,6,2021,1,6,2021,,,,24000001001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/GasScheduleC.pdf
+Schedule of Rates,Duquesne Light Company,16,4,2021,15,6,2021,,,,42005016001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/supplement-no-25-to-tariff-no-25---2021-distribution-rate-case-tariff-supplement-filed-at-docket-no-r-2021-3024750.pdf
+Commercial & Industrial Time-of-Day: Rate Schedule CI-TOD4,SMUD,,,,17,9,2021,,,,6005009001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/CI-TOD4.pdf
+Schedule of Rates for Electric Service,The Illuminating Company,,,,1,12,2021,,,,39001666002,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/CEI-2021-Electric-Service.pdf
 Tariff for Service,Jersey Central Power and Light,,,,1,7,2021,,,,34002065001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/BPU-13-Part-III-Effective-July-1-2021.pdf
+Schedule A6-TOU,San Diego Gas and Electric,30,9,2021,1,11,2021,,,,6009031001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/ELEC_ELEC-SCHEDS_A6-TOU_2021.pdf
+Schedule GN-3,San Diego Gas and Electric,29,10,2021,1,11,2021,,,,6009031001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/GAS_GAS-SCHEDS_GN-3_2021.pdf
+Gas Service Tariff,Philadelphia Gas Works,25,6,2021,1,7,2021,,,,42000094002,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/PGW_Gas_Service_Tariff_Through_Supplement_144_-_Updated.pdf
+Minnesota Electric Rate Book – MPUC No. 2,Xcel Energy,,,,1,10,2021,,,,27000001001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Me_Section_5.pdf
+Electric Service Rates in the State of Wisconsin,We Energies,12,5,2021,1,6,2021,,,,55003100001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/elecrateswi.pdf
+"Gas Service Rates, Rules and Regulations: Tariff Book",We Energies,,,,1,1,2021,,,,55003100001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/WGCtariffbk_vol7.pdf
+Delivery Service Charges,Comed,7,12,2021,8,12,2021,,,,"17000721009, 17000721007, 17000721001",https://github.com/we3lab/wwtp-energy-rates/blob/main/references/Delivery_Service_Charges_InfoSheets.pdf
 Summary of Electric Service Delivery Rates,Eversource,15,12,2020,1,1,2021,,,,25000128001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/1-tariff-ma.pdf
+District of Columbia: Time Metered General Service - Primary Service,Pepco,,,,6,10,2021,,,,11000001001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/9.DC%20Rates%20Update%2010.6.21%20%20GT%203A.pdf
+Rate Schedules and General Service Provisions for Gas Service in the District of Columbia,Washington Gas,9,3,2021,1,4,2021,,,,11000001001,https://github.com/we3lab/wwtp-energy-rates/blob/main/references/dc-full_20210611.pdf
