@@ -1,8 +1,12 @@
 import os
 import pytest
+import warnings
+import openpyxl
 import pandas as pd
 
+# change to repo parent directory and suppress superfluous openpyxl warnings
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
 
 def check_continuity(df, charge_type):
     if charge_type == "customer" or "demand":
