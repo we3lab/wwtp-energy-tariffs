@@ -424,7 +424,7 @@ for cwns_no in metadata["CWNS_No"]:
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=8.75)
         ax0.legend(["Demand", "Energy"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
         plt.yticks(range(0, 11000, 1000))
-        plt.savefig("ElectricityCosts.png")
+        plt.savefig("ElectricityCosts.png", bbox_inches="tight")
 
         plt.figure(figsize=(4, 4))
         ax1 = plt.gca()
@@ -441,7 +441,7 @@ for cwns_no in metadata["CWNS_No"]:
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=8.75)
         ax1.legend(["Demand", "Energy"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
         plt.yticks(range(0, 80, 10))
-        plt.savefig("NaturalGasCosts.png")
+        plt.savefig("NaturalGasCosts.png", bbox_inches="tight")
 
 # violin plot of monthly averages for all rate types and facilities
 elec_customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_customer')].mean(axis=0).reset_index(drop=True)
@@ -451,53 +451,29 @@ gas_customer_avg = results.loc[(results.index.get_level_values('charge_type') ==
 gas_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_energy')].mean(axis=0).reset_index(drop=True)
 gas_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_demand')].mean(axis=0).reset_index(drop=True)
 
-elec_results = np.asarray([
-    facility_costs["electric_energy"],
-    elec_energy_avg,
-    facility_costs["electric_demand"],
-    elec_demand_avg,
-    elec_customer_avg
-], dtype="object")
-gas_results = np.asarray([
-    facility_costs["gas_energy"],
-    gas_energy_avg,
-    facility_costs["gas_demand"],
-    gas_demand_avg,
-    gas_customer_avg
-], dtype="object")
+elec_results = pd.concat([elec_energy_avg, elec_demand_avg, elec_customer_avg], axis=1)
+gas_results = pd.concat([gas_energy_avg, gas_demand_avg,gas_customer_avg], axis=1)
 
-plt.figure(num=0, figsize=(8, 4))
-plt.violinplot(elec_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
+plt.figure(num=0, figsize=(4, 4))
+plt.violinplot(elec_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
-ax0.set_xticks([1, 2, 3, 4, 5])
+ax0.set_xticks([1, 2, 3])
 ax0.set_xticklabels(
-    [
-        "Monthly Electric Energy Charges (Facility 12000017027)",
-        "Average Electric Energy Charges (All Facilities)",
-        "Monthly Electric Demand Charges (Facility 12000017027)",
-        "Average Electric Demand Charges (All Facilities)",
-        "Average Electric Customer Charges (All Facilities)"
-    ],
+    ["Electric Energy\nCharges", "Electric Demand\nCharges", "Electric Customer\nCharges"],
     fontname="Arial",
     fontsize=8
 )
-plt.savefig("ElectricViolionPlot.png")
+plt.savefig("ElectricViolionPlot.png", bbox_inches="tight")
 
-plt.figure(num=0, figsize=(8, 4))
-plt.violinplot(gas_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
+plt.figure(num=0, figsize=(4, 4))
+plt.violinplot(gas_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
-ax0.set_xticks([1, 2, 3, 4, 5])
+ax0.set_xticks([1, 2, 3])
 ax0.set_xticklabels(
-    [
-        "Monthly Gas Energy Charges (Facility 12000017027)",
-        "Average Gas Energy Charges (All Facilities)",
-        "Monthly Gas Demand Charges (Facility 12000017027)",
-        "Average Gas Demand Charges (All Facilities)",
-        "Average Gas Customer Charges (All Facilities)"
-    ],
+    ["Gas Energy\nCharges", "Gas Demand\nCharges", "Gas Customer\nCharges"],
     fontname="Arial",
     fontsize=8
 )
-plt.savefig("GasViolionPlot.png")
+plt.savefig("GasViolionPlot.png", bbox_inches="tight")
