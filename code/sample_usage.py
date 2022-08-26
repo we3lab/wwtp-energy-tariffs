@@ -1,11 +1,14 @@
 import os
+import warnings
 import numpy as np
 import pandas as pd
 import datetime as dt
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as font_manager
 
+# change to repo parent directory and suppress superfluous openpyxl warnings
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
 
 def get_charge_array(consumption_data, rate_data, charge_type, utility="electric"):
     """Gets an array with customer, demand, or energy charges (i.e. `charge_type`)
@@ -59,12 +62,11 @@ def get_charge_array(consumption_data, rate_data, charge_type, utility="electric
         for each hour, day, and month
     """
     ndays = int(consumption_data.shape[0] / 96)
+    # first search for the correct charge type, then correct utility
     charges = rate_data.loc[(rate_data["type"] == charge_type), :]
-    # combine customer charges regardless of utility
+    charges = charges.loc[charges["utility"] == utility, :]
     if charge_type == "customer":
         return charges["charge"].values
-    # if not a customer charge, search for the correct utility
-    charges = charges.loc[charges["utility"] == utility, :]
     periods = charges["period"].values
     charge_limits = charges["basic_charge_limit"]
     weekdays = consumption_data["DateTime"].dt.weekday.values
@@ -288,10 +290,11 @@ for cwns_no in metadata["CWNS_No"]:
         month_end = last_day_of_month(dt.datetime(2019, month, 1, 0, 0, 0)) + dt.timedelta(hours=23, minutes=45)
         end_idx = (energy_df["DateTime"] == month_end).idxmax()
 
-        customer_charges = get_charge_array(
+        electric_customer_charges = get_charge_array(
             energy_df.loc[start_idx:end_idx],
             rate_df,
-            "customer"
+            "customer",
+            utility="electric"
         )
         electric_demand_charges = get_charge_array(
             energy_df.loc[start_idx:end_idx],
@@ -305,6 +308,12 @@ for cwns_no in metadata["CWNS_No"]:
             "energy",
             utility="electric"
         )
+        gas_customer_charges = get_charge_array(
+            energy_df.loc[start_idx:end_idx],
+            rate_df,
+            "customer",
+            utility="gas"
+        )
         gas_energy_charges = get_charge_array(
             energy_df.loc[start_idx:end_idx],
             rate_df,
@@ -317,7 +326,8 @@ for cwns_no in metadata["CWNS_No"]:
             "demand",
             utility="gas"
         )
-        customer_cost = np.sum(customer_charges)
+        electric_customer_cost = np.sum(electric_customer_charges)
+        gas_customer_cost = np.sum(gas_customer_charges)
         electric_demand_cost = calculate_cost(
             electric_demand_charges,
             energy_df.loc[start_idx:end_idx, elec_col],
@@ -343,9 +353,10 @@ for cwns_no in metadata["CWNS_No"]:
             utility="gas",
         )
         cost = {
-            "customer": customer_cost,
+            "electric_customer": electric_customer_cost,
             "electric_demand": electric_demand_cost,
             "electric_energy": electric_energy_cost,
+            "gas_customer": gas_customer_cost,
             "gas_demand": gas_demand_cost,
             "gas_energy": gas_energy_cost,
         }
@@ -358,32 +369,32 @@ for cwns_no in metadata["CWNS_No"]:
         results = pd.concat([results, pd.Series(costs, index=index)], axis=1)
     else:
         charge_type = [
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
-            "customer", "electric_demand", "electric_energy", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
+            "electric_customer", "electric_demand", "electric_energy", "gas_customer", "gas_demand", "gas_energy",
         ]
         month = [
-            "Jan", "Jan", "Jan", "Jan", "Jan",
-            "Feb", "Feb", "Feb", "Feb", "Feb",
-            "Mar", "Mar", "Mar", "Mar", "Mar",
-            "Apr", "Apr", "Apr", "Apr", "Apr",
-            "May", "May", "May", "May", "May",
-            "June", "June", "June", "June", "June",
-            "July", "July", "July", "July", "July",
-            "Aug", "Aug", "Aug", "Aug", "Aug",
-            "Sept", "Sept", "Sept", "Sept", "Sept",
-            "Oct", "Oct", "Oct", "Oct", "Oct",
-            "Nov", "Nov", "Nov", "Nov", "Nov",
-            "Dec", "Dec", "Dec", "Dec", "Dec",
+            "Jan", "Jan", "Jan", "Jan", "Jan", "Jan",
+            "Feb", "Feb", "Feb", "Feb", "Feb", "Feb",
+            "Mar", "Mar", "Mar", "Mar", "Mar", "Mar",
+            "Apr", "Apr", "Apr", "Apr", "Apr", "Apr",
+            "May", "May", "May", "May", "May", "May",
+            "June", "June", "June", "June", "June", "June",
+            "July", "July", "July", "July", "July", "July",
+            "Aug", "Aug", "Aug", "Aug", "Aug", "Aug",
+            "Sept", "Sept", "Sept", "Sept", "Sept", "Sept",
+            "Oct", "Oct", "Oct", "Oct", "Oct", "Oct",
+            "Nov", "Nov", "Nov", "Nov", "Nov", "Nov",
+            "Dec", "Dec", "Dec", "Dec", "Dec", "Dec",
         ]
         tuples = list(zip(*[charge_type, month]))
         index = pd.MultiIndex.from_tuples(tuples, names=["charge_type", "month"])
@@ -394,15 +405,20 @@ for cwns_no in metadata["CWNS_No"]:
 
     # plot all months of sample Facility No. 12000017028
     if cwns_no == 12000017027:
-        costs = pd.Series(costs, index=index)
+        facility_costs = pd.Series(costs, index=index)
         ind = np.arange(12)  # the x locations for the groups
         width = 0.4          # the width of the bars
 
         plt.figure(figsize=(4, 4))
         ax0 = plt.gca()
-        ax0.bar(ind, costs["electric_demand"], width)
-        ax0.bar(ind + width, costs["electric_energy"], width)
-        ax0.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"])
+        ax0.bar(ind, facility_costs["electric_demand"], width)
+        ax0.bar(ind + width, facility_costs["electric_energy"], width)
+        ax0.set_xticks(
+            np.arange(12),
+            ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+            fontname="Arial",
+            fontsize=8
+        )
         ax0.set_xlabel("Month", fontname="Arial", fontsize=12)
         ax0.set_ylabel("Electricity Cost ($)", fontname="Arial", fontsize=12)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=8.75)
@@ -412,9 +428,14 @@ for cwns_no in metadata["CWNS_No"]:
 
         plt.figure(figsize=(4, 4))
         ax1 = plt.gca()
-        ax1.bar(ind, costs["gas_demand"], width)
-        ax1.bar(ind + width, costs["gas_energy"], width)
-        ax1.set_xticklabels(["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"])
+        ax1.bar(ind, facility_costs["gas_demand"], width)
+        ax1.bar(ind + width, facility_costs["gas_energy"], width)
+        ax1.set_xticks(
+            np.arange(12),
+            ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+            fontname="Arial",
+            fontsize=8
+        )
         ax1.set_xlabel("Month", fontname="Arial", fontsize=12)
         ax1.set_ylabel("Natural Gas Cost ($)", fontname="Arial", fontsize=12)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=8.75)
@@ -423,23 +444,60 @@ for cwns_no in metadata["CWNS_No"]:
         plt.savefig("NaturalGasCosts.png")
 
 # violin plot of monthly averages for all rate types and facilities
-customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'customer')].mean(axis=0)
-gas_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_energy')].mean(axis=0)
-gas_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_demand')].mean(axis=0)
-elec_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_energy')].mean(axis=0)
-elec_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_demand')].mean(axis=0)
-avg_results = pd.concat([customer_avg, gas_energy_avg, gas_demand_avg, elec_energy_avg, elec_demand_avg], axis=1)
+elec_customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_customer')].mean(axis=0).reset_index(drop=True)
+elec_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_energy')].mean(axis=0).reset_index(drop=True)
+elec_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'electric_demand')].mean(axis=0).reset_index(drop=True)
+gas_customer_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_customer')].mean(axis=0).reset_index(drop=True)
+gas_energy_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_energy')].mean(axis=0).reset_index(drop=True)
+gas_demand_avg = results.loc[(results.index.get_level_values('charge_type') == 'gas_demand')].mean(axis=0).reset_index(drop=True)
+
+elec_results = np.asarray([
+    facility_costs["electric_energy"],
+    elec_energy_avg,
+    facility_costs["electric_demand"],
+    elec_demand_avg,
+    elec_customer_avg
+], dtype="object")
+gas_results = np.asarray([
+    facility_costs["gas_energy"],
+    gas_energy_avg,
+    facility_costs["gas_demand"],
+    gas_demand_avg,
+    gas_customer_avg
+], dtype="object")
 
 plt.figure(num=0, figsize=(8, 4))
-plt.violinplot(avg_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
+plt.violinplot(elec_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
-# ax0.set_title("Energy Cost Simulation for 100 Largest WWTPs in USA")
-ax0.set_xlabel("Charge Type", fontname="Arial", fontsize=12)
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
 ax0.set_xticks([1, 2, 3, 4, 5])
 ax0.set_xticklabels(
-    ["Customer", "Gas Energy", "Gas Demand", "Electric Energy", "Electric Demand"],
+    [
+        "Monthly Electric Energy Charges (Facility 12000017027)",
+        "Average Electric Energy Charges (All Facilities)",
+        "Monthly Electric Demand Charges (Facility 12000017027)",
+        "Average Electric Demand Charges (All Facilities)",
+        "Average Electric Customer Charges (All Facilities)"
+    ],
     fontname="Arial",
-    fontsize=12
+    fontsize=8
 )
-plt.savefig("CostsViolionPlot.png")
+plt.savefig("ElectricViolionPlot.png")
+
+plt.figure(num=0, figsize=(8, 4))
+plt.violinplot(gas_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
+ax0 = plt.gca()
+ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
+ax0.set_xticks([1, 2, 3, 4, 5])
+ax0.set_xticklabels(
+    [
+        "Monthly Gas Energy Charges (Facility 12000017027)",
+        "Average Gas Energy Charges (All Facilities)",
+        "Monthly Gas Demand Charges (Facility 12000017027)",
+        "Average Gas Demand Charges (All Facilities)",
+        "Average Gas Customer Charges (All Facilities)"
+    ],
+    fontname="Arial",
+    fontsize=8
+)
+plt.savefig("GasViolionPlot.png")

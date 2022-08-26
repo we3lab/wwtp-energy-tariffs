@@ -47,7 +47,7 @@ for cwns_no in metadata["CWNS_No"]:
     rate_df = pd.read_excel("data/WWTP_Billing.xlsx", sheet_name=str(cwns_no))
 
     # Check that MGD is increasing with each sheet, within bounds of smallest/largest
-    current_mgd = row["Total Flow (MGD)"].iloc[0]
+    current_mgd = row["Existing Total Flow (MGD)"].iloc[0]
     assert old_mgd <= current_mgd
     assert current_mgd <= max_mgd
     old_mgd = current_mgd
