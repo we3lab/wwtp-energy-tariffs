@@ -16,11 +16,11 @@ Metadata is stored in a single CSV files with each facility taking up one row an
 -	**County**: county where the facility is located, e.g. “Onondaga”
 -	**State**: two-letter code for the state where the facility is located, e.g. “NY”
 -	**Has Cogen**: whether the facility has co-generation capabilities (regardless of whether or not they are operating). Either “Yes” or “No”
--	**Est. Existing Energy Demand (MW)**: estimated energy demand in MW. Calculated by multiplying Existing Total Flow by a typical energy intensity of wastewater treatment
--	**Est. Existing Electric Grid Demand (MW)**: estimated electricity demand in MW. Either equal to or half of Est. Existing Energy Demand depending on whether or not a facility has co-generation.
+-	**Est. Existing Electricity Demand (MW)**: estimated total electricity demand in MW. Calculated by multiplying Existing Total Flow by a typical energy intensity of wastewater treatment.
+-	**Est. Existing Electric Grid Demand (MW)**: estimated electric grid demand in MW. Either equal to or half of Est. Existing Electricity Demand depending on whether or not a facility has co-generation.
 -	**Est. Existing Natural Gas Demand (therms/hr)**: estimated natural gas demand in therms/hr. If a facility had co-generation, it was estimated that 50% of its electricity is produced by co-generation using a standard biogas mixture. If a facility did not have co-generation, gas demand was assumed to be zero.
--	**Est. Design Energy Demand (MW)**: estimated maximum electricity demand in MW. Calculated by multiplying Design Flow by a typical energy intensity of wastewater treatment
--	**Est. Design Electric Grid Demand (MW)**: estimated maximum electricity demand in MW. Either equal to or half of Est. Design Energy Demand depending on whether or not a facility has co-generation.
+-	**Est. Design Electricity Demand (MW)**: estimated maximum total electricity demand in MW. Calculated by multiplying Design Flow by a typical energy intensity of wastewater treatment.
+-	**Est. Design Electric Grid Demand (MW)**: estimated maximum electric grid demand in MW. Either equal to or half of Est. Design Electricity Demand depending on whether or not a facility has co-generation.
 -	**Est. Design Natural Gas Demand (therms/hr)**: estimated maximum natural gas demand in therms/hr. If a facility had co-generation, it was estimated that 50% of its electricity is produced by co-generation using a standard biogas mixture. If a facility did not have co-generation, gas demand was assumed to be zero.
 -	**Electric Utility**: electric utility, e.g. “National Grid”
 -	**Gas Utility**: natural gas utility, e.g. “National Grid”
