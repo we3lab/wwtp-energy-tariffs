@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as font_manager
 
 # change to repo parent directory and suppress superfluous openpyxl warnings
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
 
 def get_charge_array(consumption_data, rate_data, charge_type, utility="electric"):
@@ -216,7 +216,7 @@ def calculate_cost(
             name = names[j]
             if j == len(names) - 1:
                 cost += np.sum(
-                    (consumption_data[start_idx:] / divisor) * charges[name][start_idx:]
+                    (consumption_data.iloc[start_idx:] / divisor) * charges[name][start_idx:]
                 )
                 break
             else:
@@ -422,7 +422,7 @@ for cwns_no in metadata["CWNS_No"]:
         ax0.set_xlabel("Month", fontname="Arial", fontsize=12)
         ax0.set_ylabel("Electricity Cost ($)", fontname="Arial", fontsize=12)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=10)
-        ax0.legend(["Energy", "Demand"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
+        ax0.legend(["Energy", "Demand"], loc="upper center", frameon=False, bbox_to_anchor=(0.5, 1.03), prop=arial_font, ncol=2)
         plt.yticks(range(0, 11000, 1000), fontsize=10)
         plt.savefig("ElectricityCosts.png", bbox_inches="tight")
 
@@ -439,7 +439,7 @@ for cwns_no in metadata["CWNS_No"]:
         ax1.set_xlabel("Month", fontname="Arial", fontsize=12)
         ax1.set_ylabel("Natural Gas Cost ($)", fontname="Arial", fontsize=12)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=10)
-        ax1.legend(["Energy", "Demand"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
+        ax1.legend(["Energy", "Demand"], loc="upper center", frameon=False, bbox_to_anchor=(0.5, 1.03), prop=arial_font, ncol=2)
         plt.yticks(range(0, 80, 10), fontsize=10)
         plt.savefig("NaturalGasCosts.png", bbox_inches="tight")
 
@@ -454,26 +454,28 @@ gas_demand_avg = results.loc[(results.index.get_level_values('charge_type') == '
 elec_results = pd.concat([elec_energy_avg, elec_demand_avg, elec_customer_avg], axis=1)
 gas_results = pd.concat([gas_energy_avg, gas_demand_avg,gas_customer_avg], axis=1)
 
-plt.figure(num=0, figsize=(4, 4))
+plt.figure(figsize=(4, 4))
 plt.violinplot(elec_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
+ax0.set_yticks(np.arange(0, 50000, step=5000))
 ax0.set_xticks([1, 2, 3])
 ax0.set_xticklabels(
-    ["Electric Energy\nCharges", "Electric Demand\nCharges", "Electric Customer\nCharges"],
+    ["Electric Energy\nCharges", "Electric\nDemand Charges", "Electric Customer\nCharges"],
     fontname="Arial",
     fontsize=10
 )
-plt.savefig("ElectricViolionPlot.png", bbox_inches="tight")
+plt.savefig("ElectricViolinPlot.png", bbox_inches="tight")
 
-plt.figure(num=1, figsize=(4, 4))
+plt.figure(figsize=(4, 4))
 plt.violinplot(gas_results, quantiles=[[0.25, 0.5, 0.75], [0.25, 0.5, 0.75], [0.25, 0.5, 0.75]])
 ax0 = plt.gca()
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=12)
+ax0.set_yticks(np.arange(0, 3000, step=250))
 ax0.set_xticks([1, 2, 3])
 ax0.set_xticklabels(
     ["Gas Energy\nCharges", "Gas Demand\nCharges", "Gas Customer\nCharges"],
     fontname="Arial",
     fontsize=10
 )
-plt.savefig("GasViolionPlot.png", bbox_inches="tight")
+plt.savefig("GasViolinPlot.png", bbox_inches="tight")

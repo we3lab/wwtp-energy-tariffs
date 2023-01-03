@@ -5,7 +5,7 @@ import openpyxl
 import pandas as pd
 
 # change to repo parent directory and suppress superfluous openpyxl warnings
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')
 
 def check_continuity(df, charge_type):
@@ -86,6 +86,10 @@ for cwns_no in metadata["CWNS_No"]:
     # Check that energy demand is either equal to or twice that of electricity demand
     # and that natural gas demand is either 0 or electricity * conversion_factor
     conversion_factor = 3600 / (105.5 * 10) # see paper for details
-    assert (row["Est. Energy Demand (MW)"].iloc[0] == pytest.approx(row["Est. Electric Grid Demand (MW)"].iloc[0])
-        or (row["Est. Energy Demand (MW)"].iloc[0]  / 2 == pytest.approx(row["Est. Electric Grid Demand (MW)"].iloc[0])
-            and row["Est. Electric Grid Demand (MW)"].iloc[0] == pytest.approx(row["Est. Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)))
+    assert (row["Est. Design Electricity Demand (MW)"].iloc[0] == pytest.approx(row["Est. Design Electric Grid Demand (MW)"].iloc[0])
+        or (row["Est. Design Electricity Demand (MW)"].iloc[0] / 2 == pytest.approx(row["Est. Design Electric Grid Demand (MW)"].iloc[0])
+            and row["Est. Design Electric Grid Demand (MW)"].iloc[0] == pytest.approx(row["Est. Design Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)))
+    
+    assert (row["Est. Existing Electricity Demand (MW)"].iloc[0] == pytest.approx(row["Est. Existing Electric Grid Demand (MW)"].iloc[0])
+        or (row["Est. Existing Electricity Demand (MW)"].iloc[0] / 2 == pytest.approx(row["Est. Existing Electric Grid Demand (MW)"].iloc[0])
+            and row["Est. Existing Electric Grid Demand (MW)"].iloc[0] == pytest.approx(row["Est. Existing Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)))

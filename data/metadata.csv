@@ -1,4 +1,4 @@
-Index,CWNS_No,Existing Total Flow (MGD),Design Flow (MGD),City,County,State,Has Cogen,Est. Existing Energy Demand (MW),Est. Existing Electric Grid Demand (MW),Est. Existing Natural Gas Demand (therms/hr),Est. Design Energy Demand (MW),Est. Design Electric Grid Demand (MW),Est. Design Natural Gas Demand (therms/hr),Electricity Utility,Gas Utility
+Index,CWNS_No,Existing Total Flow (MGD),Design Flow (MGD),City,County,State,Has Cogen,Est. Existing Electricity Demand (MW),Est. Existing Electric Grid Demand (MW),Est. Existing Natural Gas Demand (therms/hr),Est. Design Electricity Demand (MW),Est. Design Electric Grid Demand (MW),Est. Design Natural Gas Demand (therms/hr),Electricity Utility,Gas Utility
 1,12000053001,50.5,96,Tampa,Hillsborough,FL,Yes,5.260416667,2.630208334,8.975118486,10,5,17.06161137,TECO,TECO
 2,48003033002,52.66,75,Austin,Travis,TX,No,5.485416666,5.485416666,0,7.8125,7.8125,0,Austin Energy,
 3,31001825002,53,50,Bellevue,Sarpy,NE,No,5.520833334,5.520833334,0,5.208333333,5.208333333,0,Omaha Public Power District,
