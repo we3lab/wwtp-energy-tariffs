@@ -464,7 +464,7 @@ ax0.set_xticklabels(
     fontname="Arial",
     fontsize=20
 )
-plt.yticks(np.arange(0, 50000, step=5000), fontsize=18)
+plt.yticks(np.arange(0, 50000, step=5000), fontsize=16)
 plt.savefig("ElectricViolinPlot.png", bbox_inches="tight")
 
 plt.figure(figsize=(10, 10))
@@ -477,5 +477,5 @@ ax0.set_xticklabels(
     fontname="Arial",
     fontsize=20
 )
-plt.yticks(np.arange(0, 3000, step=250), fontsize=18)
+plt.yticks(np.arange(0, 3000, step=250), fontsize=16)
 plt.savefig("GasViolinPlot.png", bbox_inches="tight")
