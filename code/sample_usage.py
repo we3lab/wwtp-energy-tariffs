@@ -420,7 +420,7 @@ for cwns_no in metadata["CWNS_No"]:
             fontsize=16
         )
         ax0.set_xlabel("Month", fontname="Arial", fontsize=24)
-        ax0.set_ylabel("Electricity Cost ($)", fontname="Arial", fontsize=24)
+        ax0.set_ylabel("Electricity cost ($)", fontname="Arial", fontsize=24)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=18)
         ax0.legend(["Energy", "Demand"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
         plt.yticks(range(0, 11000, 1000), fontsize=18)
@@ -437,7 +437,7 @@ for cwns_no in metadata["CWNS_No"]:
             fontsize=16
         )
         ax1.set_xlabel("Month", fontname="Arial", fontsize=24)
-        ax1.set_ylabel("Natural Gas Cost ($)", fontname="Arial", fontsize=24)
+        ax1.set_ylabel("Natural gas cost ($)", fontname="Arial", fontsize=24)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=18)
         ax1.legend(["Energy", "Demand"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
         plt.yticks(range(0, 80, 10), fontsize=18)
@@ -460,7 +460,7 @@ ax0 = plt.gca()
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=24)
 ax0.set_xticks([1, 2, 3])
 ax0.set_xticklabels(
-    ["Electric Energy\nCharges", "Electric Demand \n Charges", "Electric Customer\nCharges"],
+    ["Electric energy\ncharges", "Electric demand \n charges", "Electric customer\ncharges"],
     fontname="Arial",
     fontsize=20
 )
@@ -473,7 +473,7 @@ ax0 = plt.gca()
 ax0.set_ylabel("Cost ($/month)", fontname="Arial", fontsize=24)
 ax0.set_xticks([1, 2, 3])
 ax0.set_xticklabels(
-    ["Gas Energy\nCharges", "Gas Demand\nCharges", "Gas Customer\nCharges"],
+    ["Gas energy\ncharges", "Gas demand\ncharges", "Gas customer\ncharges"],
     fontname="Arial",
     fontsize=20
 )
