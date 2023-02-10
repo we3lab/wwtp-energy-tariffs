@@ -50,25 +50,25 @@ Besides the assumptions made for every facility laid out in the Methods section,
 
 ## Reference List
 There is a list of all the original rate schedules and tariffs used to compile this dataset, which includes the following information:
-- **Document Title**: Name of the document being referenced
-- **Utility**: Utility which published this tariff
-- **Day Filed**: Day on which this tariff was filed (if known)
-- **Month Filed**: Month in which this tariff was filed (if known)
-- **Year Filed**: Year in which this tariff was filed (if known)
-- **Day Effective**: Day on which this tariff became effective (if known)
-- **Month Effective**: Month in which this tariff became effective (if known)
-- **Year Effective**: Year in which this tariff became effective (if known)
-- **Day Accessed**: Day on which this tariff was downloaded (if known)
-- **Month Accessed**: Month in which this tariff was downloaded (if known)
-- **Year Accessed**: Year in which this tariff was downloaded (if known)
-- **Relevant CWNS Numbers**: List of facilities to which this tariff applies
-- **URL**: Link to the original document in this repository in PDF, Excel, or Word format
+- **Document Title**: name of the document being referenced
+- **Utility**: utility which published this tariff
+- **Day Filed**: day on which this tariff was filed (if known)
+- **Month Filed**: month in which this tariff was filed (if known)
+- **Year Filed**: year in which this tariff was filed (if known)
+- **Day Effective**: day on which this tariff became effective (if known)
+- **Month Effective**: month in which this tariff became effective (if known)
+- **Year Effective**: year in which this tariff became effective (if known)
+- **Day Accessed**: day on which this tariff was downloaded (if known)
+- **Month Accessed**: month in which this tariff was downloaded (if known)
+- **Year Accessed**: year in which this tariff was downloaded (if known)
+- **Relevant CWNS Numbers**: list of facilities to which this tariff applies
+- **URL**: link to the original document in this repository in PDF, Excel, or Word format
 
 If the referenced tariff included multiple sheets with different filed or effective dates, then the most recent date of the entire book was used. Date accessed is only included for non-static HTML pages, which were archived with the [Wayback Machine](https://archive.org/web/). All documents are available in the `references` folder.
 
 ## Dummy Energy Data
 One week of sample energy data at 15-minute timescales is copied for a year to be used by `sample_usage.py`.
 `sample_usage.py` demonstrates some simple analysis that can be conducted using this dataset.
--	**DateTime**: Datetime of dummy energy data sample
+-	**DateTime**: datetime of dummy energy data sample
 - **grid_to_plant_kW**: electricity consumed from the grid in kW
 - **natural_gas_therm_per_hr**: natural gas consumed by co-generation in therms/hr
