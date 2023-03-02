@@ -195,6 +195,7 @@ def calculate_cost(
             except IndexError:
                 demand = consumption_data[
                     np.argmax(charges[name][:] * consumption_data)
+                    + consumption_data.index[0]
                 ]
                 if next_name and demand > float(next_name):
                     cost += np.max((float(next_name) - float(name)) * charges[name][:])
