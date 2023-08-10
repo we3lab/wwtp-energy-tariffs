@@ -75,9 +75,8 @@ There is a list of all the original tariffs used to compile this dataset, which 
 - **Month Accessed**: month in which this tariff was downloaded (if known)
 - **Year Accessed**: year in which this tariff was downloaded (if known)
 - **Relevant CWNS Numbers**: list of facilities to which this tariff applies
-- **URL**: link to the original document in this repository in PDF, Excel, or Word format
 
-If the referenced tariff included multiple sheets with different filed or effective dates, then the most recent date of the entire book was used. Date accessed is only included for non-static HTML pages, which were archived with the [Wayback Machine](https://archive.org/web/). All documents are available in the `references` folder.
+If the referenced tariff included multiple sheets with different filed or effective dates, then the most recent date of the entire book was used. Date accessed is only included for non-static HTML pages.
 
 ## Dummy Energy Data
 One week of sample energy data at 15-minute timescales is copied for a year to be used by `sample_usage.py`.
