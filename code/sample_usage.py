@@ -28,14 +28,16 @@ def get_charge_array(consumption_data, rate_data, charge_type, utility="electric
         utility             type of utility {'electric', 'gas'}
         type                type of charge {'customer', 'demand', 'energy'}
         period              period used to calculate demand charge (as `str`)
-        basic_charge_limit  the limit at which the charge comes into effect (as `int`)
+        basic_charge_limit (imperial)  the limit in imperial units at which the charge comes into effect (as `int`)
+        basic_charge_limit (metric)  the limit in metric units at which the charge comes into effect (as `int`)
         month_start         first month for which the charge applies {1-12}
         month_end           last month for which the charge applies {1-12}
         hour_start          hour at which the charge begins {0-24}
         hour_end            hour at which the charge ends {0-24}
         weekday_start       first day on which the charge applies {0-6}
         weekday_end         last day for which the charge applies {0-6}
-        charge              cost of service (as `int`)
+        charge (imperial)   cost of service per unit gas (therm, therm/hr) or electricity (kW, kWh) (as `int`)
+        charge (metric)     cost of service per unit gas (m3, m3/hr) or electricity (kW, kWh)(as `int`)
         units               units of `basic_charge_limit` and `charge` (as `str`)
         ==================  ===========================================================
 
@@ -66,9 +68,9 @@ def get_charge_array(consumption_data, rate_data, charge_type, utility="electric
     charges = rate_data.loc[(rate_data["type"] == charge_type), :]
     charges = charges.loc[charges["utility"] == utility, :]
     if charge_type == "customer":
-        return charges["charge"].values
+        return charges["charge (imperial)"].values
     periods = charges["period"].values
-    charge_limits = charges["basic_charge_limit"]
+    charge_limits = charges["basic_charge_limit (imperial)"]
     weekdays = consumption_data["DateTime"].dt.weekday.values
     months = consumption_data["DateTime"].dt.month.values
     hours = consumption_data["DateTime"].dt.hour.astype(float).values
@@ -89,7 +91,7 @@ def get_charge_array(consumption_data, rate_data, charge_type, utility="electric
 
     charge_array = np.array([])
     for limit in np.unique(charge_limits):
-        limit_charges = charges.loc[charges["basic_charge_limit"] == limit, :]
+        limit_charges = charges.loc[charges["basic_charge_limit (imperial)"] == limit, :]
         if charge_type == "demand":
             data = np.zeros((ndays * 96, limit_charges.shape[0]))
         else:
@@ -114,9 +116,9 @@ def get_charge_array(consumption_data, rate_data, charge_type, utility="electric
                 else:
                     idx_np = periods_seen[period][0]
                     apply_charge = apply_charge | periods_seen[period][1]
-                data[:, idx_np] = apply_charge * charge["charge"]
+                data[:, idx_np] = apply_charge * charge["charge (imperial)"]
             else:
-                data += apply_charge * charge["charge"]
+                data += apply_charge * charge["charge (imperial)"]
         if charge_array.size == 0:
             charge_array = np.array(data, dtype=[(str(limit), float)])
         else:

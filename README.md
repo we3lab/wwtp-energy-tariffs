@@ -12,15 +12,15 @@ Metadata is stored in a single CSV files with each facility taking up one row an
 -	**CWNS_No**: Clean Watershed Needs Survey (CWNS) ID number
 -	**Existing Total Flow (MGD)**: operational flow rate in millions of gallons per day according to CWNS
 -	**Design Flow (MGD)**: design flow rate in millions of gallons per day according to CWNS
--	**Existing Total Flow (m3/d)**: operational flow rate in cubic meters per day according to CWNS (using a conversion factor of 3785.41178 cubic meters / day = 1 million gallons / day)
--	**Design Flow (m3/d)**: design flow rate in cubic meters according to CWNS (using a conversion factor of 3785.41178 cubic meters / day = 1 million gallons / day)
+-	**Existing Total Flow (m3/d)**: operational flow rate in cubic meters per day according to CWNS (using a conversion factor of 3785.41178 cubic meters = 1 million gallons)
+-	**Design Flow (m3/d)**: design flow rate in cubic meters according to CWNS (using a conversion factor of 3785.41178 cubic meters = 1 million gallons)
 -	**City**: city where the facility is located, e.g. “Syracuse”
 -	**County**: county where the facility is located, e.g. “Onondaga”
 -	**State**: two-letter code for the state where the facility is located, e.g. “NY”
 -	**Latitude**: latitude decimal degree for a point. Positive values are used for both Northern and Southern hemisphere and have to be used in conjunction with the Latitude direction. The measure of the degree portion of a latitude measurement (0 to 90 degrees), indicating angular distance North or South of the equator. One degree of latitude equals 111.1 Kilometers or approximately 60 Nautical Miles. Includes the direction of the latitude measurement, being either: N - North, or S - South.
 -	**Longitude**: longitude decimal degree for a point. Positive values are used for both Eastern and Western hemisphere and have to be used in conjunction with the Longitude direction. The measure of the degree portion of longitude (000 to 180 degrees), indicating angular distance West or East of the prime meridian drawn from pole to pole around the Earth and passing through Greenwich, England. Includes the direction of the longitude measurement being either: E - East, or W - West.
 -   **Horizontal Collection Method**: text that describes the method used to determine the latitude and longitude coordinates for a point on the earth (taken directly from CWNS)
--   **Horizontal Coordinate Datum**: name of the reference datum used in determining latitude and longitude coordinates. The options are: North American Datum of 1927, North American Datum of 1983, World Geodetic System of 1984, and North American Datum of 1927
+-   **Horizontal Coordinate Datum**: name of the reference datum used in determining latitude and longitude coordinates. The options are North American Datum of 1983 or World Geodetic System of 1984
 -   **Location Description**: name of the place where the coordinates were measured taken directly from CWNS. The options are: Lagoon or Settling Pond; Facility/Station Location; Intake/Release Point; Treatment/Storage Point; or Center/Centroid
 -   **Location Source**: : indicates how the point was entered. “Manual” indicates that the state user entered the coordinate information. “NPDES Permit” indicates that the coordinates were sourced from the information provided on the NPDES permit
 -   **Scale**: text that describes the geopositioning or Scale of a map, e.g. 1:1000
