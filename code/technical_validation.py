@@ -73,23 +73,76 @@ for cwns_no in metadata["CWNS_No"]:
                      or cwns_no == 36002001005 or cwns_no == 36002001002 or cwns_no == 36002001003
                      or cwns_no == 36002001012 or cwns_no == 36002001001 or cwns_no == 36002001011)
                      and utility == "gas" and charge_type == "energy")):
-                assert slice["charge"].min() >= 0
-                assert slice["charge"].max() <= max_charges[utility + "_" + charge_type]
+                assert slice["charge (imperial)"].min() >= 0
+                assert slice["charge (metric)"].min() >= 0
+                assert slice["charge (imperial)"].max() <= max_charges[utility + "_" + charge_type]
+                if utility == "gas":
+                    assert slice["charge (metric)"].max() <= max_charges[utility + "_" + charge_type] / 2.83168
+                elif utility == "electric":
+                    assert slice["charge (metric)"].max() <= max_charges[utility + "_" + charge_type] 
+                else:
+                    raise ValueError("utility must be 'gas' or 'electric'")
+
 
     # Check units (i.e. demand is in kW and energy in kWh)
     assert (rate_df.loc[rate_df["type"] == "customer"]["units"] == "$/month").all()
     assert (rate_df.loc[(rate_df["type"] == "demand") & (rate_df["utility"] == "electric")]["units"] == "$/kW").all()
     assert (rate_df.loc[(rate_df["type"] == "energy") & (rate_df["utility"] == "electric")]["units"] == "$/kWh").all()
-    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "energy")]["units"] == "$/therm").all()
-    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "demand")]["units"] == "$/therm/hr").all()
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "energy")]["units"] == "$/therm or $/m3").all()
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "demand")]["units"] == "$/therm/hr or $/m3/hr").all()
+    
+    # Check that month_start <= month_end, weekday_start <= weekday_end, and hour_start < hour_end
+    assert (rate_df.loc[rate_df["type"] != "customer"]["month_start"] <= rate_df.loc[rate_df["type"] != "customer"]["month_end"]).all() 
+    assert (rate_df.loc[rate_df["type"] != "customer"]["weekday_start"] <= rate_df.loc[rate_df["type"] != "customer"]["weekday_end"]).all() 
+    assert (rate_df.loc[rate_df["type"] != "customer"]["hour_start"] < rate_df.loc[rate_df["type"] != "customer"]["hour_end"]).all() 
 
-    # Check that energy demand is either equal to or twice that of electricity demand
+    # Check that conversion between metric and imperial units is correct
+    assert (rate_df.loc[rate_df["utility"] == "electric"]["charge (imperial)"] 
+        == rate_df.loc[rate_df["utility"] == "electric"]["charge (metric)"]
+    ).all()
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] != "customer")]["charge (imperial)"] / 2.83168
+        ==  rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] != "customer")]["charge (metric)"] 
+    ).all()
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "customer")]["charge (imperial)"] 
+        == rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] == "customer")]["charge (metric)"]
+    ).all()
+    assert (rate_df.loc[(rate_df["utility"] == "electric") & (rate_df["type"] != "customer")]["basic_charge_limit (imperial)"] 
+        == rate_df.loc[(rate_df["utility"] == "electric") & (rate_df["type"] != "customer")]["basic_charge_limit (metric)"]
+    ).all()
+    assert (rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] != "customer")]["basic_charge_limit (imperial)"] * 2.83168
+        == rate_df.loc[(rate_df["utility"] == "gas") & (rate_df["type"] != "customer")]["basic_charge_limit (metric)"]
+    ).all() 
+
+
+    # Check that gross electricity demand is either equal to or twice that of electric grid demand
     # and that natural gas demand is either 0 or electricity * conversion_factor
     conversion_factor = 3600 / (105.5 * 10) # see paper for details
-    assert (row["Est. Design Electricity Demand (MW)"].iloc[0] == pytest.approx(row["Est. Design Electric Grid Demand (MW)"].iloc[0])
-        or (row["Est. Design Electricity Demand (MW)"].iloc[0] / 2 == pytest.approx(row["Est. Design Electric Grid Demand (MW)"].iloc[0])
-            and row["Est. Design Electric Grid Demand (MW)"].iloc[0] == pytest.approx(row["Est. Design Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)))
+    assert (
+        row["Est. Design Electricity Demand (MW)"].iloc[0] == pytest.approx(row["Est. Design Electric Grid Demand (MW)"].iloc[0])
+        or (
+            row["Est. Design Electricity Demand (MW)"].iloc[0] / 2 == pytest.approx(row["Est. Design Electric Grid Demand (MW)"].iloc[0])
+            and (
+                row["Est. Design Electric Grid Demand (MW)"].iloc[0] 
+                == pytest.approx(row["Est. Design Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)
+            )
+        )
+    )
     
-    assert (row["Est. Existing Electricity Demand (MW)"].iloc[0] == pytest.approx(row["Est. Existing Electric Grid Demand (MW)"].iloc[0])
-        or (row["Est. Existing Electricity Demand (MW)"].iloc[0] / 2 == pytest.approx(row["Est. Existing Electric Grid Demand (MW)"].iloc[0])
-            and row["Est. Existing Electric Grid Demand (MW)"].iloc[0] == pytest.approx(row["Est. Existing Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)))
+    assert (
+        row["Est. Existing Electricity Demand (MW)"].iloc[0] == pytest.approx(row["Est. Existing Electric Grid Demand (MW)"].iloc[0])
+        or (
+            row["Est. Existing Electricity Demand (MW)"].iloc[0] / 2 == pytest.approx(row["Est. Existing Electric Grid Demand (MW)"].iloc[0])
+            and (
+                row["Est. Existing Electric Grid Demand (MW)"].iloc[0] 
+                == pytest.approx(row["Est. Existing Natural Gas Demand (therms/hr)"].iloc[0] / conversion_factor)
+            )
+        )
+    )
+
+    # Check that treatment flow and natural gas demand conversions are correct
+    row["Est. Existing Natural Gas Demand (m3/hr)"].iloc[0] == pytest.approx(row["Est. Existing Natural Gas Demand (therms/hr)"].iloc[0] * 2.83168)
+    row["Est. Design Natural Gas Demand (m3/hr)"].iloc[0] == pytest.approx(row["Est. Design Natural Gas Demand (therms/hr)"].iloc[0] * 2.83168)
+    row["Existing Total Flow (m3/d)"].iloc[0] == pytest.approx(row["Existing Total Flow (MGD)"].iloc[0] * 3785.41178)
+    row["Design Flow (m3/d)"].iloc[0] == pytest.approx(row["Design Flow (MGD)"].iloc[0] * 3785.41178)
+
+
