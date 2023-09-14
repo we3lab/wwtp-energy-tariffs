@@ -68,6 +68,7 @@ for cwns_no in metadata["CWNS_No"]:
             # Check prices are positive and below a threshold
             # Manually checked the outliers in the if statement are correct
             if not ((cwns_no == 42005016001 and charge_type == "customer")
+                or (cwns_no == 6009031001 and charge_type == "demand" and utility == "electric")
                 or ((cwns_no == 36002001007 or cwns_no == 36002001010 or cwns_no == 36002001004
                      or cwns_no == 36002001009 or cwns_no == 36002001006 or cwns_no == 36003169012
                      or cwns_no == 36002001005 or cwns_no == 36002001002 or cwns_no == 36002001003
