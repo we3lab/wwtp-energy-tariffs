@@ -81,6 +81,6 @@ If the referenced tariff included multiple sheets with different filed or effect
 ## Synthetic Energy Data
 One week of sample energy data at a 15-minute timescale is copied for a year to be used by `sample_usage.py`.
 `sample_usage.py` demonstrates some simple analysis that can be conducted using this dataset.
--	**DateTime**: datetime of synthetic energy data sample
+- **DateTime**: date and time of synthetic energy data sample
 - **grid_to_plant_kW**: electricity consumed from the grid in kW
 - **natural_gas_therm_per_hr**: natural gas consumed by co-generation in therms/hr
