@@ -276,7 +276,7 @@ elec_col = "grid_to_plant_kW"
 ng_col = "natural_gas_therm_per_hr"
 
 # Load energy consumption and rates
-energy_df = pd.read_csv("data/dummy_energy_data.csv")
+energy_df = pd.read_csv("data/synthetic_energy_data.csv")
 metadata = pd.read_csv("data/metadata.csv")
 results = None
 

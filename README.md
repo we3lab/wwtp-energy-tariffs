@@ -4,7 +4,7 @@ Data in this repository consists of two Excel spreadsheets and three CSV files:
 -	WWTP_Billing.xlsx
 -	WWTP_Billling_Assumptions.xlsx
 - reference_list.csv
-- dummy_energy_data.csv
+- synthetic_energy_data.csv
 
 ## Metadata
 Metadata is stored in a single CSV files with each facility taking up one row and the following columns named in the header:
@@ -78,9 +78,9 @@ There is a list of all the original tariffs used to compile this dataset, which 
 
 If the referenced tariff included multiple sheets with different filed or effective dates, then the most recent date of the entire book was used. Date accessed is only included for non-static HTML pages.
 
-## Dummy Energy Data
-One week of sample energy data at 15-minute timescales is copied for a year to be used by `sample_usage.py`.
+## Synthetic Energy Data
+One week of sample energy data at a 15-minute timescale is copied for a year to be used by `sample_usage.py`.
 `sample_usage.py` demonstrates some simple analysis that can be conducted using this dataset.
--	**DateTime**: datetime of dummy energy data sample
+-	**DateTime**: datetime of synthetic energy data sample
 - **grid_to_plant_kW**: electricity consumed from the grid in kW
 - **natural_gas_therm_per_hr**: natural gas consumed by co-generation in therms/hr
