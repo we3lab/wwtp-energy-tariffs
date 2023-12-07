@@ -288,9 +288,9 @@ for cwns_no in metadata["CWNS_No"]:
     while month < 13:
         # Find start and end index of this month
         energy_df["DateTime"] = pd.to_datetime(energy_df["DateTime"])
-        month_start = dt.datetime(2019, month, 1, 0, 0, 0)
+        month_start = dt.datetime(2021, month, 1, 0, 0, 0)
         start_idx = (energy_df["DateTime"] == month_start).idxmax()
-        month_end = last_day_of_month(dt.datetime(2019, month, 1, 0, 0, 0)) + dt.timedelta(hours=23, minutes=45)
+        month_end = last_day_of_month(dt.datetime(2021, month, 1, 0, 0, 0)) + dt.timedelta(hours=23, minutes=45)
         end_idx = (energy_df["DateTime"] == month_end).idxmax()
 
         electric_customer_charges = get_charge_array(
@@ -467,7 +467,7 @@ ax0.set_xticklabels(
     fontname="Arial",
     fontsize=20
 )
-plt.yticks(np.arange(0, 50000, step=5000), fontsize=16)
+plt.yticks(np.arange(0, 51000, step=5000), fontsize=16)
 plt.savefig("ElectricViolinPlot.png", bbox_inches="tight")
 
 plt.figure(figsize=(8, 8))
