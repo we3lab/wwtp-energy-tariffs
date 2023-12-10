@@ -8,13 +8,14 @@ Rosenbaum Exhibits,Nebraska Public Services Commission,,,,,,,9,2,2020,3100182500
 Common Commercial Electric Rates,PSEG Long Island,,,,1,1,2021,,,,"36001010001, 36001010017, 36001010006"
 Large Time-Of-Day Electric Service,Eversource,6,5,2021,1,7,2021,,,,9000641001
 GSC By Rate Class,Eversource,,,,1,10,2021,,,,9000641001
-Industrial/General Service (B-20),Pacific Gas and Electric,,,,1,8,2021,,,,"6005025001, 6005053001, 6002032003, 6002036001, 6002121001"
-Electric Shedule B-20,Pacific Gas and Electric,8,7,2021,8,7,2021,,,,"6005025001, 6005053001, 6002032003, 6002036001, 6002121001"
-Schedule G-NR2,Pacific Gas and Electric,,,,1,1,2020,,,,"6005009001, 6005025001, 6005053001, 6002032003, 6002036001, 6002121001"
+Industrial/General Service (B-20),Pacific Gas and Electric,,,,1,8,2021,,,,"6005025001, 6005053001, 6002032003, 6002036001, 6002121001, 6002041001"
+Electric Shedule B-20,Pacific Gas and Electric,8,7,2021,8,7,2021,,,,"6005025001, 6005053001, 6002032003, 6002036001, 6002121001, 6002041001"
+Schedule G-NR2,Pacific Gas and Electric,,,,1,1,2020,,,,"6005009001, 6005025001, 6005053001, 6002032003, 6002036001, 6002121001, 6002041001"
 Fuel Cost Adjustment,PNM,,,,1,4,2021,14,9,2023,35000021001
 Large Power Service - Time-Of-Use Rate,PNM,21,11,2018,1,1,2019,,,,35000021001
 Cogeneration Service,New Mexico Gas Company,,,,29,12,2020,,,,35000021001
 Cost of Gas,New Mexico Gas Company,,,,,,,5,8,2022,35000021001
+CPS Energy Retail Fuel Adjustment Factors,CPS Energy,,,,,,,2,10,2022,48008015001
 Extra Large Power Service,CPS Energy,,,,1,2,2014,21,1,2021,48008015001
 Tariff for Electric Service,Public Service Electric and Gas,,,,1,10,2021,,,,"34006012001, 34001005001, 34001030001, 34001082001"
 Tariff for Gas Service,Public Service Electric and Gas,,,,1,10,2021,,,,"34006012001, 34001005001, 34001030001, 34002065001"
@@ -120,7 +121,7 @@ Food Scrap Collector Generates Renewable Energy in New Jersey,Joint Meeting of E
 Cogeneration Facility,Baltimore City Department of Public Works,,,,,,,12,5,2021,24000001001
 SMUD and SRCSD Team Up to Develop Region's First Co-digestion Facility,Sacramento Regional County Sanitation District,23,3,2012,,,,,,,6005009001
 PSC No: 19 - Electricity,Rochester Gas & Electric ,,,,1,12,2020,,,,36008024001
-Merchant Function Charge Statement,Rochester Gas & Electric ,,,,1,12,2021,,,,
+Merchant Function Charge Statement,Rochester Gas & Electric ,,,,1,12,2021,,,,36008024001
 Part C - Basic Service: Eastern Massachusetts,Eversource,23,8,2021,1,10,2021,,,,25000128001
 Electric Generation Service Standard Offer Rate,AES Ohio,25,5,2021,1,6,2021,,,,39002093001
 TVA Fuel Cost,Volunteer Energy Cooperative,,,,,,,27,1,2022,"47000940001, 47000940002, 47001016001"
