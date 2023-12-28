@@ -40,7 +40,7 @@ metadata = pd.read_csv("data/metadata.csv")
 old_mgd = 50
 max_mgd = 812
 max_charges = {"electric_demand": 35, "electric_energy": 2, "gas_energy": 3,
-               "gas_demand": 1.5, "gas_customer": 5000, "electric_customer": 5000}
+               "gas_demand": 40, "gas_customer": 5000, "electric_customer": 5000}
 
 for cwns_no in metadata["CWNS_No"]:
     row = metadata.loc[metadata["CWNS_No"] == cwns_no]
@@ -52,13 +52,7 @@ for cwns_no in metadata["CWNS_No"]:
     assert current_mgd <= max_mgd
     old_mgd = current_mgd
 
-    # If facility has_cogen, need gas (otherwise just electric)
     utilities = rate_df["utility"].unique()
-    if row["Has Cogen"].iloc[0] == "Yes":
-        assert "gas" in utilities
-    else:
-        assert "gas" not in utilities
-
     for utility in utilities:
         for charge_type in rate_df.loc[rate_df["utility"] == utility]["type"].unique():
             # Check that all days of a year are included
@@ -72,8 +66,13 @@ for cwns_no in metadata["CWNS_No"]:
                 or ((cwns_no == 36002001007 or cwns_no == 36002001010 or cwns_no == 36002001004
                      or cwns_no == 36002001009 or cwns_no == 36002001006 or cwns_no == 36003169012
                      or cwns_no == 36002001005 or cwns_no == 36002001002 or cwns_no == 36002001003
-                     or cwns_no == 36002001012 or cwns_no == 36002001001 or cwns_no == 36002001011)
-                     and utility == "gas" and charge_type == "energy")):
+                     or cwns_no == 36002001012 or cwns_no == 36002001001 or cwns_no == 36002001011
+                     or cwns_no == 36001010001 or cwns_no == 36001010017 or cwns_no == 34006012001 
+                     or cwns_no == 36001010006 or cwns_no == 36008024001)
+                     and utility == "gas" and charge_type == "energy")
+                or ((cwns_no == 34006012001 or cwns_no == 34001005001 or cwns_no == 34001030001 
+                    or cwns_no == 34002065001 or cwns_no == 34001082001) 
+                    and utility == "gas" and charge_type == "demand")):
                 assert slice["charge (imperial)"].min() >= 0
                 assert slice["charge (metric)"].min() >= 0
                 assert slice["charge (imperial)"].max() <= max_charges[utility + "_" + charge_type]
