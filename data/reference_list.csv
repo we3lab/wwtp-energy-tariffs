@@ -1,13 +1,20 @@
 Document Title,Utility,Day Filed,Month Filed,Year Filed,Day Effective,Month Effective,Year Effective,Day Accessed,Month Accessed,Year Accessed,Relevant CWNS Numbers
 Approved Rates for September 2021,TECO,,,,1,9,2021,,,,12000053001
 Business Rates Comparison Chart,TECO,,,,1,1,2021,,,,12000053001
+Commercial Purchased Gas Adjustment (PGA) and Btu Factors for Peoples Gas System,TECO,,,,1,1,2021,1,12,2023,12000053001
 Commercial Electric Rates & Line Items,Austin Energy,,,,,,,24,10,2021,48003033002
+Commercial Service Rate,Texas Gas Service,,,,4,8,2020,,,,48003033002
+Cost of Gas,Texas Gas Service,,,,1,12,2021,,,,48003033002
 Service Regulations & Schedules,Omaha Public Power District,,,,11,6,2020,,,,31001825002
 Rosenbaum Exhibits,Nebraska Public Services Commission,,,,,,,9,2,2020,31001825002
+Schedule B - Commercial & Industrial Firm Service: 24-Month History of Rates & Charges,Metropolitan Utilities District,,,,,,,1,12,2022,31001825002
 "Service, Rates, and Regulations",PSEG Long Island,,,,,,,8,12,2021,"36001010001, 36001010017, 36001010006"
 Common Commercial Electric Rates,PSEG Long Island,,,,1,1,2021,,,,"36001010001, 36001010017, 36001010006"
+"Gas Delivery Charges: Long Island, NY",National Grid,,,,1,9,2021,,,,"36001010001, 36001010017, 36001010006"
 Large Time-Of-Day Electric Service,Eversource,6,5,2021,1,7,2021,,,,9000641001
 GSC By Rate Class,Eversource,,,,1,10,2021,,,,9000641001
+2021 Rate Schedule,Connecticut Natural Gas,,,,1,3,2021,,,,9000641001
+Approved Purchased Gas Adjustments,Connecticut Natural Gas,,,,29,11,2021,30,8,2022,9000641001
 Industrial/General Service (B-20),Pacific Gas and Electric,,,,1,8,2021,,,,"6005025001, 6005053001, 6002032003, 6002036001, 6002121001, 6002041001"
 Electric Shedule B-20,Pacific Gas and Electric,8,7,2021,8,7,2021,,,,"6005025001, 6005053001, 6002032003, 6002036001, 6002121001, 6002041001"
 Schedule G-NR2,Pacific Gas and Electric,,,,1,1,2020,,,,"6005009001, 6005025001, 6005053001, 6002032003, 6002036001, 6002121001, 6002041001"
@@ -15,34 +22,62 @@ Fuel Cost Adjustment,PNM,,,,1,4,2021,14,9,2023,35000021001
 Large Power Service - Time-Of-Use Rate,PNM,21,11,2018,1,1,2019,,,,35000021001
 Cogeneration Service,New Mexico Gas Company,,,,29,12,2020,,,,35000021001
 Cost of Gas,New Mexico Gas Company,,,,,,,5,8,2022,35000021001
+Gas Rate Class B,CPS Energy,,,,,,,1,2,2014,48008015001
 CPS Energy Retail Fuel Adjustment Factors,CPS Energy,,,,,,,2,10,2022,48008015001
 Extra Large Power Service,CPS Energy,,,,1,2,2014,21,1,2021,48008015001
 Tariff for Electric Service,Public Service Electric and Gas,,,,1,10,2021,,,,"34006012001, 34001005001, 34001030001, 34001082001"
-Tariff for Gas Service,Public Service Electric and Gas,,,,1,10,2021,,,,"34006012001, 34001005001, 34001030001, 34002065001"
+Tariff for Gas Service,Public Service Electric and Gas,,,,1,10,2021,,,,"34006012001, 34001005001, 34001030001, 34002065001, 34001082001"
+BGSS-F: Basic Gas Supply Service-Firm,Public Service Electric and Gas,29,11,2021,1,12,2021,,,,"34006012001, 34001005001, 34001030001, 34002065001, 34001082001"
 Schedule TOU-8,Southern California Edison,17,9,2021,1,10,2021,,,,"6004010004, 6004009003, 6008022001, 6008022002, 6004010001, 6004009001"
 Schedule for Electricity Service,Con Edison,,,,1,1,2021,,,,"36002001007, 36002001004, 36002001006, 36003169012, 36002001010, 36002001009, 36002001005, 36002001002, 36002001003, 36002001012, 36002001001, 36002001011"
-Gas Delivery Charges,National Grid,,,,1,9,2021,,,,"36002001007, 36002001004, 36002001006, 36002001010, 36002001009, 36002001005, 36002001003, 36002001012, 36002001011"
+"Gas Delivery Charges: Metro Ð Brooklyn, Queens, Staten Island",National Grid,,,,1,9,2021,,,,"36002001007, 36002001004, 36002001006, 36002001010, 36002001009, 36002001005, 36002001003, 36002001011"
 Rider A,Dominion Energy,6,8,2021,1,9,2021,,,,"51000161001, 51000154002"
 Schedule GS-4,Dominion Energy,15,3,2019,,,,,,,"51000161001, 51000154002"
+Terms and Conditions and Schedules for Supplying Gas,Virginia Natural Gas,,,,9,27,2021,,,,"51000161001, 51000154002"
+Schedule of Rates and Charges,Virginia Natural Gas,,,,1,10,2021,,,,"51000161001, 51000154002"
 Large Power and Light Time-Of-Use,Oklahoma Gas & Electric,19,9,2019,1,10,2019,,,,40000123012
 Standard Pricing Schedule: FCA,Oklahoma Gas & Electric,22,9,2021,1,10,2021,,,,40000123012
+Rate Schedule 200-LCI,Oklahoma Natural Gas,9,8,2017,19,8,2021,,,,40000123012
+Cost of Gas / Purchased Gas Adjustment History,Oklahoma Natural Gas,,,,,,,27,12,2023,40000123012
 Schedule HVG,Tacoma Power,,,,1,4,2021,,,,53001280001
 Summary of Total Current Prices - Gas,Puget Sound Energy,,,,1,10,2021,,,,"53001280001, 53000776001, 53000776002"
 Commercial Electric Rates,NV Energy,,,,1,10,2021,,,,"32000011001, 32000200820"
+Schedule No. SG-G3/NG-G3,Southwest Gas,31,12,2018,1,1,2019,,,,"32000011001, 32000200820"
+Advice Letter No. 521,Southwest Gas,29,12,2020,1,1,2021,,,,"32000011001, 32000200820"
+Advice Letter No. 523,Southwest Gas,29,3,2021,1,4,2021,,,,"32000011001, 32000200820"
+Advice Letter No. 524,Southwest Gas,1,7,2021,1,7,2021,,,,"32000011001, 32000200820"
+Advice Letter No. 525,Southwest Gas,23,9,2021,1,10,2021,,,,"32000011001, 32000200820"
 Schedule 89: Large Nonresidential Standard Service,Portland General Electric,16,11,2020,1,1,2021,,,,41000017001
 Summary of Monthly Sales Service Billing Rates,NW Natural,,,,1,11,2021,,,,41000017001
 Total Monthly Fuel Cost Adjustment (TMFCA),EPB of Chattanooga,,,,1,6,2021,,,,47000245002
 GSB Rate Schedule Summary,EPB of Chattanooga,,,,1,10,2018,,,,47000245002
+Industrial Tariff,Chattanooga Gas Company,,,,1,9,2021,,,,47000245002
 Primary Voltage Service: Schedule P,Baltimore Gas and Electric,28,12,2020,1,1,2021,,,,"24000001002, 24000001001"
 Current Market-Priced Service Rate Components,Baltimore Gas and Electric,27,1,2021,1,3,2021,,,,"24000001002, 24000001001"
 Electric Service Tariff,Penelec,,,,1,7,2021,,,,42006056001
+Rate Summary - January 2021,National Fuel Gas,,,,1,1,2021,,,,42006056001
+Rate Summary - February 2021,National Fuel Gas,,,,1,2,2021,,,,42006056001
+Rate Summary - March 2021,National Fuel Gas,,,,1,3,2021,,,,42006056001
+Rate Summary - April 2021,National Fuel Gas,,,,1,4,2021,,,,42006056001
+Rate Summary - May 2021,National Fuel Gas,,,,1,5,2021,,,,42006056001
+Rate Summary - June 2021,National Fuel Gas,,,,1,6,2021,,,,42006056001
+Rate Summary - July 2021,National Fuel Gas,,,,1,7,2021,,,,42006056001
+Rate Summary - August 2021,National Fuel Gas,,,,1,8,2021,,,,42006056001
+Rate Summary - September 2021,National Fuel Gas,,,,1,9,2021,,,,42006056001
+Rate Summary - October 2021,National Fuel Gas,,,,1,10,2021,,,,42006056001
+Rate Summary - November 2021,National Fuel Gas,,,,1,11,2021,,,,42006056001
+Rate Summary - December 2021,National Fuel Gas,,,,1,12,2021,,,,42006056001
 Summary of Total Current Prices - Electric,Puget Sound Energy,,,,1,10,2021,,,,53000776001
 Electric Service: Schedule TGS,"Memphis Light, Gas, and Water",,,,4,1,2021,,,,"47000940001, 47000940002"
-Service Rates,National Grid,,,,,,,24,6,2021,"36007136001, 36009071001"
+Schedules G-8 & G-9: Large General Service,"Memphis Light, Gas, and Water",,,,2,7,2018,,,,"47000940001, 47000940002"
+Schedule of Purchased Gas Adjustments,"Memphis Light, Gas, and Water",,,,,,,2,2,2022,"47000940001, 47000940002"
+Service Rates,National Grid,,,,,,,1,12,2021,"36007136001, 36009071001, 36002001007, 36002001004, 36002001006, 36002001010, 36002001009, 36002001005, 36002001003, 36002001011"
 Electric Distribution Service: Primary,AES Ohio,25,5,2021,1,6,2021,,,,39002093001
 Tariff for Gas Service,CenterPoint Energy,,,,3,6,2021,,,,39002093001
+Standard Choice Offer (SCO) Rider,CenterPoint Energy,,,,1,1,2021,27,12,2023,39002093001
 Business Rates and Clauses,Florida Power and Light,,,,1,5,2021,,,,"12000001001, 12000017028, 12000017027, 12000017004"
 Natural Gas Tariff,Florida Public Utilities Company,,,,1,5,2021,,,,12000001001
+Purchased Gas Adjustment (PGA) True-up,Florida Public Service Commission,23,11,2020,1,1,2021,,,,"12000001001, 12000017028, 12000017027, 12000017004"
 Delaware Electric Tariff,Delmarva,29,6,2021,1,7,2021,,,,10000027001
 Delaware Gas Tariff,Delmarva,29,6,2021,1,7,2021,,,,10000027001
 Hawai'i Electric Light Energy Cost Recovery Factor,Hawaiian Electric,27,1,2021,1,2,2021,,,,15000003001
@@ -55,56 +90,124 @@ Schedule TOU-P,Hawaiian Electric,,,,1,1,2019,,,,15000003001
 Tariff Applicable to Utility Gas Service,Hawaii Gas,,,,1,2,2019,,,,15000003001
 Tariff for Retail Delivery Service,Oncor,,,,8,10,2018,,,,"48004026002, 48004026001, 48004122001, 48000004001"
 Generic Transmission and Distribution Rates,Oncor,,,,1,3,2021,,,,"48004026002, 48004026001, 48004122001, 48000004001"
-Tariff for Gas Service,Atmos Energy,15,6,2021,1,7,2021,,,,"48004026002, 48004122001"
+Tariff for Gas Service,Atmos Energy,15,6,2021,1,7,2021,,,,"48004026002, 48004026001, 48004122001, 48000004001"
+Mid-Tex Division: Gas Cost Recovery (GCR) Thirteenth Month History,Atmos Energy,,,,,,,1,8,2022,"48004026002, 48004026001, 48004122001, 48000004001"
 Schedule of Rates for Electric Service,Ohio Edison,,,,1,12,2021,,,,39000084001
-Large Volume General Sales Service (LVGSS),Dominion Energy,5,1,2021,6,1,2021,,,,39000084001
-PSC No. 9: Gas,Con Edison,,,,1,1,2021,,,,"36003169012, 36002001002, 36002001001"
+Large Volume General Sales Service (LVGSS),Dominion Energy,5,1,2021,6,1,2021,,,,"39000084001, 39001666001, 39001666002"
+Historic Monthly Variable Rates for Dominon East Ohio Customers,Dominion Energy,,,,1,1,2021,27,12,2023,"39000084001, 39001666001, 39001666002"
+PSC No. 9: Gas,Con Edison,,,,1,1,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - January 2021,Con Edison,,,,1,1,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - February 2021,Con Edison,,,,1,2,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - March 2021,Con Edison,,,,1,3,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - April 2021,Con Edison,,,,1,4,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - May 2021,Con Edison,,,,1,5,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - June 2021,Con Edison,,,,1,6,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - July 2021,Con Edison,,,,1,7,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - August 2021,Con Edison,,,,1,8,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - September 2021,Con Edison,,,,1,9,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - October 2021,Con Edison,,,,1,10,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - November 2021,Con Edison,,,,1,11,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
+Statement of Gas Cost Factor - December 2021,Con Edison,,,,1,12,2021,,,,"36003169012, 36002001002, 36002001001, 36002001012"
 Schedule GS,AEP Ohio,22,11,2021,1,12,2021,,,,"39001792001, 39001792002"
 Rate Book for Electric Service,DTE Energy,11,2,2021,6,3,2021,,,,"26004005011, 26000596001"
+Gas Cost Recovery Factors,DTE Energy,,,,1,12,2021,,,,"26004005011, 26000596001"
 Large Power Service (LPS),Evergy,6,11,2018,6,12,2018,,,,29001011001
+Schedule of Rates and Charges Applying to Spire Missouri West Service Areas,Spire,23,11,2021,23,12,2021,,,,29001011001
+Recent Rate Changes for Spire Missouri Customers,Spire,,,,,,,7,7,2022,"29001011001, 29001023001, 29001023002"
 Schedule of Rates for Electric Service,Toledo Edison,,,,1,12,2021,,,,39008260001
-Rules and Regulations Governing the Distribution and Sale of Gas,Columbia Gas,,,,30,12,2021,,,,"39008260001, 39001792002"
+Rules and Regulations Governing the Distribution and Sale of Gas,Columbia Gas,,,,30,12,2021,,,,"39001792002, 39008260001, 39001792001"
+Historic Rates for Columbia Gas of Ohio Customers,Columbia Gas,,,,1,1,2021,27,12,2023,"39001792002, 39008260001, 39001792001"
+PSC No: 19 - Electricity,Rochester Gas & Electric ,,,,1,12,2020,,,,36008024001
+Merchant Function Charge Statement,Rochester Gas & Electric ,,,,1,12,2021,,,,36008024001
+PSC No: 16 - Gas,Rochester Gas & Electric ,30,11,2020,1,12,2020,,,,36008024001
+12-Month Average Supply Rate,Rochester Gas & Electric ,,,,,,,31,12,2021,36008024001
 "Power and Light Large Schedule: ""PLL-12""",Georgia Power,,,,1,1,2021,,,,13000012004
 "Fuel Cost Recovery Schedule: ""FCR-25""",Georgia Power,,,,1,6,2020,,,,13000012004
 Atlanta Gas Light Company Tariff,Atlanta Gas Light,,,,1,12,2021,,,,13000012004
-Cross-Over Rate for November 2021,Southern California Gas,5,11,2021,10,11,2021,,,,"6008022001, 6008022002, 6004010001, 6004009001"
+Cross-Over Rate for November 2021,Southern California Gas,5,11,2021,10,11,2021,,,,"6008022001, 6008022002, 6004010001, 6004009001, 6004010004, 6004009003"
 Large General Power Rate Schedules,Nashville Electric Service,,,,1,11,2021,,,,47001016001
 Index of Tariff & Service Regulations,Piedmont Natural Gas Company,,,,1,11,2021,,,,47001016001
+Tennessee Rates,Piedmont Natural Gas Company,,,,1,6,2021,,,,47001016001
 Large Electric Service,Entergy New Orleans,1,3,2020,1,4,2020,,,,22009071001
 Record of Fuel Adjustments Billed,Entergy New Orleans,,,,,,,31,5,2022,22009071001
+Large General Gas Service,Entergy New Orleans,31,7,2019,1,4,2020,,,,22009071001
+Purchased Gas Adjustment,Entergy New Orleans,,,,,,,1,12,2022,22009071001
 Electric Service Tariff,PECO,14,9,2021,1,10,2021,,,,"42000094003, 42000094001, 42000094002"
-FPSC Natural Gas Tariff,Florida City Gas,,,,5,1,2021,,,,"12000017027, 12000017004"
+FPSC Natural Gas Tariff,Florida City Gas,,,,5,1,2021,,,,"12000017028, 12000017027, 12000017004"
 Tariff for Retail Delivery Service,CenterPoint Energy,,,,15,10,2021,,,,48007039001
+Rate Sheet: General Service Large Volume,CenterPoint Energy,,,,1,1,2021,28,7,2021,48007039001
+Purchased Gas Adjustments (PGA),CenterPoint Energy,,,,1,12,2021,,,,48007039001
 "Rates, Terms, and Conditions for Furnishing Electric Service",Louisville Gas and Electric,,,,24,9,2021,,,,21000025001
+"Rates, Terms, and Conditions for Furnishing Natural Gas Service",Louisville Gas and Electric,20,7,2021,1,7,2021,,,,21000025001
 Business Rates,Seattle City Light,,,,,,,26,10,2021,53000776002
 Rider FAC,Ameren,30,7,2021,1,10,2021,,,,"29001023001, 29001023002"
 Service Classification No. 11 (M): Large Primary Service Rate,Ameren,18,3,2021,1,4,2021,,,,"29001023001, 29001023002"
+Schedule of Rates and Charges Applying to Spire Missouri East Service Areas,Spire,23,11,2021,23,12,2021,,,,"29001023001, 29001023002"
 Fuel Cost Adjustment,AES Indiana,25,8,2021,31,8,2021,,,,18000061001
 Rate PL: Primary Service (Large),AES Indiana,,,,7,4,2021,,,,18000061001
+Gas Rate No. D5: Large Volume Delivery Service,Citizens Gas,,,,6,9,2011,,,,18000061001
+Submission of Monthly Price Update for Ja nuary 2021,Citizens Gas,29,12,2020,1,1,2021,,,,18000061001
+Submission of Monthly Price Update for February 2021,Citizens Gas,27,1,2021,1,2,2021,,,,18000061001
+Submission of Monthly Price Update for March 2021,Citizens Gas,24,2,2021,1,3,2021,,,,18000061001
+Submission of Monthly Price Update for April 2021,Citizens Gas,29,3,2021,1,4,2021,,,,18000061001
+Submission of Monthly Price Update for May 2021,Citizens Gas,28,4,2021,1,5,2021,,,,18000061001
+Submission of Monthly Price Update for June 2021,Citizens Gas,26,5,2021,1,6,2021,,,,18000061001
+Submission of Monthly Price Update for July 2021,Citizens Gas,28,6,2021,1,7,2021,,,,18000061001
+Submission of Monthly Price Update for August 2021,Citizens Gas,28,7,2021,1,8,2021,,,,18000061001
+Submission of Monthly Price Update for September 2021,Citizens Gas,27,8,2021,1,9,2021,,,,18000061001
+Submission of Monthly Price Update for October 2021,Citizens Gas,28,9,2021,1,10,2021,,,,18000061001
+Submission of Monthly Price Update for November 2021,Citizens Gas,27,10,2021,1,11,2021,,,,18000061001
+Submission of Monthly Price Update for December 2021,Citizens Gas,24,11,2021,1,12,2021,,,,18000061001
 Rate Schedule,Cleveland Public Power,,,,,,,18,11,2021,39001666001
 E-63: Standard Price Plan for Primary Large General Service,Salt River Project,15,10,2021,1,11,2021,,,,4001318001
 Tariff Schedules,Southwest Gas,23,11,2021,1,12,2021,,,,4001318001
 Rider RE,Duke Energy,20,5,2021,1,6,2021,,,,39003369002
 Rate DP: Service at Primary Distribution Voltage,Duke Energy,,,,2,1,2019,,,,39003369002
+Ohio Gas Cost Recovery Rates - January 2021,Duke Energy,14,12,2020,4,1,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - February 2021,Duke Energy,11,1,2021,2,2,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - March 2021,Duke Energy,10,2,2021,3,3,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - Aoril 2021,Duke Energy,11,3,2021,1,4,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - May 2021,Duke Energy,12,4,2021,3,5,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - June 2021,Duke Energy,12,5,2021,2,6,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - July 2021,Duke Energy,10,6,2021,1,7,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - August 2021,Duke Energy,12,7,2021,2,8,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - September 2021,Duke Energy,10,8,2021,31,8,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - October 2021,Duke Energy,9,9,2021,30,9,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - November 2021,Duke Energy,7,10,2021,29,10,2021,,,,39003369002
+Ohio Gas Cost Recovery Rates - December 2021,Duke Energy,9,11,2021,1,12,2021,,,,39003369002
 Colorado Commercial and Industrial Gas and Electric Rate Schedule Summaries,Xcel Energy,,,,1,1,2021,,,,8000070001
 Natural Gas Rates Summary,Xcel Energy,,,,1,7,2021,,,,8000070001
-General Service - Gas: Schedule C,Baltimore Gas and Electric,1,6,2021,1,6,2021,,,,24000001001
+Historical Rates: Commercial - Large Gas Service,Xcel Energy,,,,27,12,2023,,,,8000070001
+General Service - Gas: Schedule C,Baltimore Gas and Electric,1,6,2021,1,6,2021,,,,"24000001002, 24000001001"
 Schedule of Rates,Duquesne Light Company,16,4,2021,15,6,2021,,,,42005016001
+Rates and Rules for Furnishing Gas Service,Columbia Gas,30,3,2021,29,5,2021,,,,42005016001
+2021-2022 Purchased Gas Cost Rates,Columbia Gas,,,,,,,24,12,2023,42005016001
 Commercial & Industrial Time-of-Day: Rate Schedule CI-TOD4,SMUD,,,,17,9,2021,,,,6005009001
 Schedule of Rates for Electric Service,The Illuminating Company,,,,1,12,2021,,,,39001666002
 Tariff for Service,Jersey Central Power and Light,,,,1,7,2021,,,,34002065001
 Schedule A6-TOU,San Diego Gas and Electric,30,9,2021,1,11,2021,,,,6009031001
 Schedule EECC,San Diego Gas and Electric,30,10,2020,1,1,2021,,,,6009031001
 Schedule GN-3,San Diego Gas and Electric,29,10,2021,1,11,2021,,,,6009031001
-Gas Service Tariff,Philadelphia Gas Works,25,6,2021,1,7,2021,,,,42000094002
-Minnesota Electric Rate Book â€“ MPUC No. 2,Xcel Energy,,,,1,10,2021,,,,27000001001
+Gas Service Tariff,Philadelphia Gas Works,25,6,2021,1,7,2021,,,,"42000094003, 42000094001, 42000094002"
+Minnesota Electric Rate Book - MPUC No. 2,Xcel Energy,,,,1,10,2021,,,,27000001001
+Minnesota Natural Gas Rates,Xcel Energy,,,,1,1,2022,,,,27000001001
+Cost of Gas - April 2021,Xcel Energy,,,,1,4,2021,,,,27000001001
+Cost of Gas - June 2021,Xcel Energy,,,,1,6,2021,,,,27000001001
+Cost of Gas - October 2021,Xcel Energy,,,,1,10,2021,,,,27000001001
+Cost of Gas - December 2021,Xcel Energy,,,,1,12,2021,,,,27000001001
 Electric Service Rates in the State of Wisconsin,We Energies,12,5,2021,1,6,2021,,,,55003100001
 "Gas Service Rates, Rules and Regulations: Tariff Book",We Energies,,,,1,1,2021,,,,55003100001
+Effective Price Sheets for Service Offerings,We Energies,,,,1,4,2021,,,,55003100001
 Delivery Service Charges,Comed,7,12,2021,8,12,2021,,,,"17000721009, 17000721007, 17000721001"
+History of Gas Charges Due to the Operation of Rider 2,Peoples Gas,,,,1,12,2021,27,12,2023,"17000721009, 17000721007, 17000721001"
+Natural Gas Rates,Peoples Gas,,,,,,,9,12,2021,"17000721009, 17000721007, 17000721001"
 Summary of Electric Service Delivery Rates,Eversource,15,12,2020,1,1,2021,,,,25000128001
+Part C - Basic Service: Eastern Massachusetts,Eversource,23,8,2021,1,10,2021,,,,25000128001
 Boston Base Rate Tariffs,National Grid,,,,1,11,2018,,,,25000128001
+Historical Gas Adjustment Factors,National Grid,,,,,,,27,12,2023,25000128001
 District of Columbia: Time Metered General Service - Primary Service,Pepco,,,,6,10,2021,,,,11000001001
 Rate Schedules and General Service Provisions for Gas Service in the District of Columbia,Washington Gas,9,3,2021,1,4,2021,,,,11000001001
+Customer Choice,Washington Gas,,,,1,12,2021,8,6,2023,11000001001
 New Jersey's Camden County Municipal Utilities Authority Selects Anaergia's Technologies for Upgrading its Biosolids Processing at its Wastewater Facility,Anaergia,31,3,2016,,,,,,,34006012001
 Class I Inspection of the Tacoma Central Wastewater Treatment Plant - National Pollutant Discharge Elimination System (NPDES) Permit No. WA0037087,State of Washington Department of Ecology,15,9,2019,,,,,,,53001280001
 Case Study: RNG at Columbia Blvd WWTP,NW Natural,24,9,2019,,,,,,,41000017001
@@ -120,9 +223,6 @@ Food Scrap Collector Generates Renewable Energy in New Jersey,Joint Meeting of E
 "Biogas-Fueled Cogeneration Is a Great Energy Saver, Especially When It's Fine-Tuned for Maximum Output",Atlanta Department of Watershed Management,1,12,2018,,,,,,,13000012004
 Cogeneration Facility,Baltimore City Department of Public Works,,,,,,,12,5,2021,24000001001
 SMUD and SRCSD Team Up to Develop Region's First Co-digestion Facility,Sacramento Regional County Sanitation District,23,3,2012,,,,,,,6005009001
-PSC No: 19 - Electricity,Rochester Gas & Electric ,,,,1,12,2020,,,,36008024001
-Merchant Function Charge Statement,Rochester Gas & Electric ,,,,1,12,2021,,,,36008024001
-Part C - Basic Service: Eastern Massachusetts,Eversource,23,8,2021,1,10,2021,,,,25000128001
 Electric Generation Service Standard Offer Rate,AES Ohio,25,5,2021,1,6,2021,,,,39002093001
 TVA Fuel Cost,Volunteer Energy Cooperative,,,,,,,27,1,2022,"47000940001, 47000940002, 47001016001"
 Invoice Calculation for Electricity Delivery,Ameresco,,,,1,2,2021,,,,"48004026002, 48004026001, 48004122001, 48000004001"
