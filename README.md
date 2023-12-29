@@ -1,8 +1,8 @@
 # Data Records
 Data in this repository consists of two Excel spreadsheets and three CSV files:
 - metadata.csv
--	WWTP_Billing.xlsx
--	WWTP_Billling_Assumptions.xlsx
+- WWTP_Billing.xlsx
+- WWTP_Billling_Assumptions.xlsx
 - reference_list.csv
 - synthetic_energy_data.csv
 
@@ -27,12 +27,12 @@ Metadata is stored in a single CSV files with each facility taking up one row an
 -	**Has Cogen**: whether the facility has cogeneration capabilities (regardless of whether or not they are operating). Either “Yes” or “No”
 -	**Est. Existing Electricity Demand (MW)**: estimated gross electricity demand in MW. Calculated by multiplying Existing Total Flow by a typical energy intensity of wastewater treatment.
 -	**Est. Existing Electric Grid Demand (MW)**: estimated electric grid demand in MW. Either equal to or half of Est. Existing Electricity Demand depending on whether or not a facility has cogeneration.
--	**Est. Existing Natural Gas Demand (therms/hr)**: estimated average natural gas demand in therms per hour. If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was assumed to be zero.
--	**Est. Existing Natural Gas Demand (m3/hr)**: estimated average natural gas demand in cubic meters per hour (using a conversion factor of 2.83168 cubic meters = 1 therm). If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was assumed to be zero.
+-	**Est. Existing Natural Gas Demand (therms/hr)**: estimated average natural gas demand in therms per hour. If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was calculated with a 100% natural gas blend (as opposed to 10%).
+-	**Est. Existing Natural Gas Demand (m3/hr)**: estimated average natural gas demand in cubic meters per hour (using a conversion factor of 2.83168 cubic meters = 1 therm). If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was calculated with a 100% natural gas blend (as opposed to 10%).
 -	**Est. Design Electricity Demand (MW)**: estimated maximum gross electricity demand in MW. Calculated by multiplying Design Flow by a typical energy intensity of wastewater treatment.
 -	**Est. Design Electric Grid Demand (MW)**: estimated maximum electric grid demand in MW. Either equal to or half of Est. Design Electricity Demand depending on whether or not a facility has cogeneration.
--	**Est. Design Natural Gas Demand (therms/hr)**: estimated maximum natural gas demand in therms per hour. If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was assumed to be zero.
--	**Est. Design Natural Gas Demand (m3/hr)**: estimated maximum natural gas demand in cubic meters per hour (using a conversion factor of 2.83168 cubic meters = 1 therm). If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was assumed to be zero.
+-	**Est. Design Natural Gas Demand (therms/hr)**: estimated maximum natural gas demand in therms per hour. If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was calculated with a 100% natural gas blend (as opposed to 10%).
+-	**Est. Design Natural Gas Demand (m3/hr)**: estimated maximum natural gas demand in cubic meters per hour (using a conversion factor of 2.83168 cubic meters = 1 therm). If a facility had cogeneration, it was estimated that 50% of its electricity is produced by cogeneration using a standard biogas mixture. If a facility did not have cogeneration, gas demand was calculated with a 100% natural gas blend (as opposed to 10%).
 -	**Electric Utility**: electric utility, e.g. “National Grid”
 -	**Gas Utility**: natural gas utility, e.g. “National Grid”
 -	**Electricity Energy Charge Temporality**: categorization of the temporality of electricity energy charges. “Flat” indicates charges are constant throughout the year; “Seasonal-TOU” indicates charges vary monthly (Seasonal) and daily and/or hourly (TOU); “Nonseasonal-TOU” indicates charges are consistent from month to month, but vary daily and/or hourly; and “Seasonal-NonTOU” indicates charges vary monthly, but are constant from day to day and hour to hour
