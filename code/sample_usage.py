@@ -443,7 +443,7 @@ for cwns_no in metadata["CWNS_No"]:
         ax1.set_ylabel("Natural gas cost ($)", fontname="Arial", fontsize=24)
         arial_font = font_manager.FontProperties(family='Arial', style='normal', size=18)
         ax1.legend(["Energy", "Demand"], loc="upper center", frameon=False, prop=arial_font, ncol=2)
-        plt.yticks(range(0, 80, 10), fontsize=18)
+        plt.yticks(range(0, 400, 50), fontsize=18)
         plt.savefig("NaturalGasCosts.png", bbox_inches="tight")
 
 # violin plot of monthly averages for all rate types and facilities
