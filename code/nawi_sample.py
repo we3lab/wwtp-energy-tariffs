@@ -340,11 +340,35 @@ fig.savefig("figures/demand_charges.pdf", dpi=300)
 from matplotlib import dates as mdates
 fmt = mdates.DateFormatter('%d')
 
+cwns_no = 2
+rate_df = pd.read_excel("data/WWTP_Billing.xlsx", sheet_name=str(cwns_no))
+month = 7
+case_metrics = {}
+energy_df["DateTime"] = pd.to_datetime(energy_df["DateTime"])
+month_start = dt.datetime(2021, month, 1, 0, 0, 0)
+start_idx = (energy_df["DateTime"] == month_start).idxmax()
+month_end = last_day_of_month(dt.datetime(2021, month, 1, 0, 0, 0)) + dt.timedelta(hours=23, minutes=45)
+end_idx = (energy_df["DateTime"] == month_end).idxmax()
+
+# collect the charge arrays
+electric_demand_charges = get_charge_array(
+    consumption_data = energy_df.loc[start_idx:end_idx],
+    rate_data = rate_df,
+    charge_type = "demand",
+    utility = "electric"
+)
+electric_energy_charges = get_charge_array(
+    consumption_data = energy_df.loc[start_idx:end_idx],
+    rate_data = rate_df,
+    charge_type = "energy",
+    utility="electric"
+)
+
 fig, ax = plt.subplots(figsize=(6, 5), nrows=2)
 ax[0].set_title("Energy Charges ($/kWh)")
 ax[0].plot(energy_df.loc[start_idx:end_idx]["DateTime"], electric_energy_charges)
 ax[0].set_xlim(energy_df.loc[start_idx:end_idx]["DateTime"].min(), energy_df.loc[start_idx:end_idx]["DateTime"].max())
-ax[0].set_ylim(0, 0.3)
+ax[0].set_ylim(0, 0.6)
 ax[0].set_yticks(np.arange(0, 0.4, 0.1))
 ax[0].set_xlabel("Day of the Month")
 ax[0].xaxis.set_major_formatter(fmt)
