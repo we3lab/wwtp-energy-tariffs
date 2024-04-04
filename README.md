@@ -88,13 +88,13 @@ One week of sample energy data at a 15-minute timescale is copied for a year to 
 - **natural_gas_therm_per_hr**: natural gas delivered to the cogenerator in therms/hr
 
 ## Attribution
-If this dataset has been useful in your research, we would appreciate if you could cite the following data descriptor:
+If this dataset has been useful in your research, we encourage you to cite the following data descriptor from Nature Scientific Data:
 
 &nbsp; Chapin, F.T., Bolorinos, J. & Mauter, M.S. Electricity and natural gas tariffs at United States wastewater treatment plants. *Sci Data* **11**, 113 (2024). DOI: [10.1038/s41597-023-02886-6](https://doi.org/10.1038/s41597-023-02886-6)
 
 The raw data can also be cited directly from Figshare:
 
-&nbsp; Chapin, F. T., Bolorinos, J., & Mauter, M. S. Electricity and natural gas tariffs at United States wastewater treatment plants. *figshare* https://doi.org/10.6084/m9.figshare.c.6435578.v1 (2024).
+&nbsp; Chapin, F.T., Bolorinos, J., & Mauter, M. S. Electricity and natural gas tariffs at United States wastewater treatment plants. *figshare* https://doi.org/10.6084/m9.figshare.c.6435578.v1 (2024).
 
 In `bibtex` format:
 
@@ -118,12 +118,14 @@ url={https://doi.org/10.1038/s41597-023-02886-6}
 }
 
 @misc{chapin_bolorinos_mauter_2024, 
+author={Chapin, Fletcher T. 
+and Bolorinos, Jose 
+and Mauter, Meagan S.}, 
 title={Electricity and natural gas rate schedules at U.S. wastewater treatment plants}, 
 url={https://springernature.figshare.com/collections/Electricity_and_natural_gas_rate_schedules_at_U_S_wastewater_treatment_plants/6435578/1}, 
 DOI={10.6084/m9.figshare.c.6435578.v1}, 
 abstractNote={Electricity and natural gas tariffs of the 100 largest wastewater treatment plants in the United States}, 
 publisher={figshare}, 
-author={Chapin, Fletcher and Bolorinos, Jose and Mauter, Meagan}, 
 year={2024}, 
 month={Jan}
 }
