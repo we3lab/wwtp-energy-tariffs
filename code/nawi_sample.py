@@ -153,12 +153,11 @@ metrics_df = pd.DataFrame(columns = ["cwns", "month", "mean_energy", "peak_energ
 
 # Use the helper functions above to get charge arrays
 for cwns_no in metadata["CWNS_No"]:
-    print(cwns_no)
     rate_df = pd.read_excel("data/WWTP_Billing.xlsx", sheet_name=str(cwns_no))
     months = [7, 12]
     for month in months:
         case_metrics = {}
-    # Find start and end index of this month
+        # Find start and end index of this month
         energy_df["DateTime"] = pd.to_datetime(energy_df["DateTime"])
         month_start = dt.datetime(2021, month, 1, 0, 0, 0)
         start_idx = (energy_df["DateTime"] == month_start).idxmax()
