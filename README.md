@@ -87,7 +87,7 @@ One week of sample energy data at a 15-minute timescale is copied for a year to 
 - **grid_to_plant_kW**: electricity delivered from the grid in kW
 - **natural_gas_therm_per_hr**: natural gas delivered to the cogenerator in therms/hr
 
-## Attribution
+## Attribution & Acknowledgements
 If this dataset has been useful in your research, we encourage you to cite the following data descriptor from Nature Scientific Data:
 
 &nbsp; Chapin, F.T., Bolorinos, J. & Mauter, M.S. Electricity and natural gas tariffs at United States wastewater treatment plants. *Sci Data* **11**, 113 (2024). DOI: [10.1038/s41597-023-02886-6](https://doi.org/10.1038/s41597-023-02886-6)
@@ -130,3 +130,5 @@ year={2024},
 month={Jan}
 }
 ```
+
+This work was funded by the United States Department of Energy (DOE), EERE Advanced Manufacturing Office (AMO) as a part of the project ENERGY Services for INtegrated FLexible Operation of Wastewater Systems (Award No. DE-EE0009499). We would like to thank Lonita Brewer from EPB of Chattanooga for obtaining archived fuel cost adjustments for 2021.
