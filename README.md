@@ -94,9 +94,9 @@ If this dataset has been useful in your research, we encourage you to cite the f
 
 The raw data can also be cited directly from Figshare:
 
-&nbsp; Chapin, F.T., Bolorinos, J., & Mauter, M. S. Electricity and natural gas tariffs at United States wastewater treatment plants. *figshare* https://doi.org/10.6084/m9.figshare.c.6435578.v1 (2024).
+&nbsp; Chapin, F.T., Bolorinos, J., & Mauter, M. S. Electricity and natural gas rate schedules at U.S. wastewater treatment plants. *figshare* https://doi.org/10.6084/m9.figshare.c.6435578.v1 (2024).
 
-In `bibtex` format:
+In `BibTeX` format:
 
 ```
 @Article{Chapin2024,
