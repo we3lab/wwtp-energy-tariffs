@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+authors:
+  - family-names: "Chapin"
+    given-names: "Fletcher T."
+    orcid: "https://orcid.org/0000-0002-2165-7963"
+  - family-names: "Bolorinos"
+    given-names: "Jose"
+    orcid: "https://orcid.org/0000-0002-3741-5483"
+  - family-names: "Mauter"
+    given-names: "Meagan S."
+    orcid: "https://orcid.org/0000-0002-4932-890X"
+title: "Electricity and natural gas rate schedules at U.S. wastewater treatment plants"
+doi: 10.6084/m9.figshare.c.6435578.v1
+date-released: 2024-01-15
+type: dataset
+message: "If this dataset has been useful in your research, we encourage you to cite the data descriptor in the preferred-citation and the dataset itself from Figshare."
+preferred-citation:
+  authors:
+  - family-names: "Chapin"
+    given-names: "Fletcher T."
+    orcid: "https://orcid.org/0000-0002-2165-7963"
+  - family-names: "Bolorinos"
+    given-names: "Jose"
+    orcid: "https://orcid.org/0000-0002-3741-5483"
+  - family-names: "Mauter"
+    given-names: "Meagan S."
+    orcid: "https://orcid.org/0000-0002-4932-890X"
+  title: "Electricity and natural gas tariffs at United States wastewater treatment plants"
+  doi: 10.1038/s41597-023-02886-6
+  date-released: 2024-01-23
+  url: "https://doi.org/10.1038/s41597-023-02886-6"
+  type: article
