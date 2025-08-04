@@ -13,6 +13,8 @@ title: "Electricity and natural gas rate schedules at U.S. wastewater treatment 
 doi: 10.6084/m9.figshare.c.6435578.v1
 date-released: 2024-01-15
 type: dataset
+publisher: 
+  name: "figshare"
 message: "If this dataset has been useful in your research, we encourage you to cite the data descriptor in the preferred-citation and the dataset itself from Figshare."
 preferred-citation:
   authors:
@@ -30,4 +32,8 @@ preferred-citation:
   date-released: 2024-01-23
   url: "https://doi.org/10.1038/s41597-023-02886-6"
   type: article
+  journal: "Scientific Data"
+  volume: 11
+  number: 1
+  pages: 113
   message: "If this dataset has been useful in your research, we encourage you to cite the data descriptor in the preferred-citation and the dataset itself from Figshare."
