@@ -99,36 +99,38 @@ The raw data can also be cited directly from Figshare:
 In `BibTeX` format:
 
 ```
-@Article{Chapin2024,
-author={Chapin, Fletcher T.
-and Bolorinos, Jose
-and Mauter, Meagan S.},
-title={Electricity and natural gas tariffs at United States wastewater treatment plants},
-journal={Scientific Data},
-year={2024},
-month={Jan},
-day={23},
-volume={11},
-number={1},
-pages={113},
-abstract={Wastewater treatment plants (WWTPs) are large electricity and natural gas consumers with untapped potential to recover carbon-neutral biogas and provide energy services for the grid. Techno-economic analysis of emerging energy recovery and management technologies is critical to understanding their commercial viability, but quantifying their energy cost savings potential is stymied by a lack of well curated, nationally representative electricity and natural gas tariff data. We present a dataset of electricity tariffs for the 100 largest WWTPs in the Clean Watershed Needs Survey (CWNS) and natural gas tariffs for the 54 of 100 WWTPs with on-site cogeneration. We manually collected tariffs from each utility's website and implemented data checks to ensure their validity. The dataset includes facility metadata, electricity tariffs, and natural gas tariffs (where cogeneration is present). Tariffs are current as of November 2021. We provide code for technical validation along with a sample simulation.},
-issn={2052-4463},
-doi={10.1038/s41597-023-02886-6},
-url={https://doi.org/10.1038/s41597-023-02886-6}
+@article{chapin2024electricity,
+  author={Chapin, Fletcher T.
+  and Bolorinos, Jose
+  and Mauter, Meagan S.},
+  title={Electricity and natural gas tariffs at United States wastewater treatment plants},
+  journal={Scientific Data},
+  year={2024},
+  month={Jan},
+  day={23},
+  volume={11},
+  number={1},
+  pages={113},
+  abstract={Wastewater treatment plants (WWTPs) are large electricity and natural gas consumers with untapped potential to recover carbon-neutral biogas and provide energy services for the grid. Techno-economic analysis of emerging energy recovery and management technologies is critical to understanding their commercial viability, but quantifying their energy cost savings potential is stymied by a lack of well curated, nationally representative electricity and natural gas tariff data. We present a dataset of electricity tariffs for the 100 largest WWTPs in the Clean Watershed Needs Survey (CWNS) and natural gas tariffs for the 54 of 100 WWTPs with on-site cogeneration. We manually collected tariffs from each utility's website and implemented data checks to ensure their validity. The dataset includes facility metadata, electricity tariffs, and natural gas tariffs (where cogeneration is present). Tariffs are current as of November 2021. We provide code for technical validation along with a sample simulation.},
+  issn={2052-4463},
+  doi={10.1038/s41597-023-02886-6},
+  url={https://doi.org/10.1038/s41597-023-02886-6}
 }
 
 @misc{chapin_bolorinos_mauter_2024, 
-author={Chapin, Fletcher T. 
-and Bolorinos, Jose 
-and Mauter, Meagan S.}, 
-title={Electricity and natural gas rate schedules at U.S. wastewater treatment plants}, 
-url={https://springernature.figshare.com/collections/Electricity_and_natural_gas_rate_schedules_at_U_S_wastewater_treatment_plants/6435578/1}, 
-DOI={10.6084/m9.figshare.c.6435578.v1}, 
-abstractNote={Electricity and natural gas tariffs of the 100 largest wastewater treatment plants in the United States}, 
-publisher={figshare}, 
-year={2024}, 
-month={Jan}
+  author={Chapin, Fletcher T. 
+  and Bolorinos, Jose 
+  and Mauter, Meagan S.}, 
+  title={Electricity and natural gas rate schedules at U.S. wastewater treatment plants}, 
+  url={https://springernature.figshare.com/collections/Electricity_and_natural_gas_rate_schedules_at_U_S_wastewater_treatment_plants/6435578/1}, 
+  DOI={10.6084/m9.figshare.c.6435578.v1}, 
+  abstractNote={Electricity and natural gas tariffs of the 100 largest wastewater treatment plants in the United States}, 
+  publisher={figshare}, 
+  year={2024}, 
+  month={Jan}
 }
 ```
 
 This work was funded by the United States Department of Energy (DOE), EERE Advanced Manufacturing Office (AMO) as a part of the project ENERGY Services for INtegrated FLexible Operation of Wastewater Systems (Award No. DE-EE0009499). We would like to thank Lonita Brewer from EPB of Chattanooga for obtaining archived fuel cost adjustments for 2021.
+
+The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof. Neither the United States Government nor any agency thereof, nor any of their employees, makes any warranty, express or implied, or assumes any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, or represents that its use would not infringe privately owned rights.
